@@ -14,6 +14,7 @@
     ../../modules/system/docker.nix
     ../../modules/system/vial.nix
     ../../modules/system/agenix.nix
+    ../../modules/system/cleanup.nix
   ];
 
   networking.hostName = "laptop";

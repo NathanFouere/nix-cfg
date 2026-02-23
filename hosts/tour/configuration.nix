@@ -15,6 +15,7 @@
     ../../modules/system/vial.nix
     ../../modules/system/nvidia.nix
     ../../modules/system/agenix.nix
+    ../../modules/system/cleanup.nix
   ];
 
   networking.hostName = "tour";

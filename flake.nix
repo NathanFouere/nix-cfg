@@ -20,6 +20,10 @@
       url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-sweep = {
+      url = "github:jzbor/nix-sweep";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -41,6 +45,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
         ];
       };
 
@@ -51,6 +56,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
         ];
       };
 
@@ -60,6 +66,7 @@
           ./hosts/thinkcentre-1/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
         ];
       };
 
@@ -69,6 +76,7 @@
           ./hosts/thinkcentre-2/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
         ];
       };
 
