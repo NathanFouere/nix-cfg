@@ -47,5 +47,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.KEY }}
 
+      - name: Add hosts to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan thinkcentre-1 thinkcentre-2 >> ~/.ssh/known_hosts
+
       - name: Deploy
         run: nix run github:serokell/deploy-rs .
