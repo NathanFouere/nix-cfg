@@ -9,6 +9,7 @@
     ../../modules/system/base.nix
     ../../modules/system/agenix.nix
     ../../modules/system/cleanup.nix
+    ../../modules/vm/config.nix
   ];
 
   networking.hostName = "thinkcentre-2";

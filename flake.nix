@@ -24,6 +24,10 @@
       url = "github:jzbor/nix-sweep";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -39,18 +43,19 @@
     in
     {
       nixosConfigurations.tour = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/tour/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.agenix.nixosModules.default
           inputs.nix-sweep.nixosModules.default
+          inputs.microvm.nixosModules.host
         ];
       };
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/laptop/configuration.nix
           inputs.home-manager.nixosModules.home-manager
@@ -61,21 +66,23 @@
       };
 
       nixosConfigurations.thinkcentre-1 = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/thinkcentre-1/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.agenix.nixosModules.default
+          inputs.microvm.nixosModules.host
           inputs.nix-sweep.nixosModules.default
         ];
       };
 
       nixosConfigurations.thinkcentre-2 = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/thinkcentre-2/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.agenix.nixosModules.default
+          inputs.microvm.nixosModules.host
           inputs.nix-sweep.nixosModules.default
         ];
       };
