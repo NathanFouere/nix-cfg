@@ -63,3 +63,4 @@ sudo nixos-rebuild switch --flake .#<host>
 * https://paradigmatic.systems/posts/setting-up-deploy-rs/
 * https://nlewo.github.io/nixos-manual-sphinx/index.html
 * https://github.com/appleboy/ssh-action
+* https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/index.html
