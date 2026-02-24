@@ -54,7 +54,6 @@
       vlc
       element-desktop
       obs-studio
-      opencode
     ];
 
     # cf . https://nixos.wiki/wiki/Firewall
