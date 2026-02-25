@@ -45,7 +45,6 @@
       wasistlos
       telegram-desktop
       vesktop
-      qbittorrent
       gimp
       chromium
       postman
