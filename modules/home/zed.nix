@@ -19,7 +19,7 @@
     ];
     userSettings = {
       hour_format = "hour24";
-      vim_mode = true;
+      vim_mode = false;
       show_edit_predictions = true;
       show_completions_on_input = true;
       scrollbar = {
