@@ -46,6 +46,13 @@ nix flake update
 sudo nixos-rebuild switch --flake .#<host>
 ```
 
+## Ollama / Opencode
+
+Connect to the host "tour" and run the following command to run opencode with ollama
+```bash
+ollama launch opencode
+```
+
 ## Sources
 
 * https://www.youtube.com/watch?v=a67Sv4Mbxmc
