@@ -16,6 +16,7 @@
     ../../modules/system/agenix.nix
     ../../modules/system/cleanup.nix
     ../../modules/system/streaming-torrent.nix
+    ../../modules/system/ai.nix
   ];
 
   networking.hostName = "laptop";

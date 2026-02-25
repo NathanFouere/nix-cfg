@@ -17,7 +17,7 @@
     ../../modules/system/agenix.nix
     ../../modules/system/cleanup.nix
     ../../modules/vm/config.nix
-    ../../modules/system/ai.nix
+    ../../modules/system/ai-host.nix
   ];
 
   networking.hostName = "tour";
