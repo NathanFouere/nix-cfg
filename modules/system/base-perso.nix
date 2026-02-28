@@ -53,6 +53,7 @@
       vlc
       element-desktop
       obs-studio
+      pciutils
     ];
 
     # cf . https://nixos.wiki/wiki/Firewall
