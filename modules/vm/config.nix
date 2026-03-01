@@ -17,6 +17,7 @@
           microvm.hypervisor = "cloud-hypervisor";
           microvm.vcpu = 2;
           microvm.mem = 1024;
+          microvm.vsock.cid = 3;
           environment.systemPackages = with pkgs; [
             htop
           ];
@@ -32,6 +33,7 @@
           microvm.hypervisor = "cloud-hypervisor";
           microvm.vcpu = 2;
           microvm.mem = 1024;
+          microvm.vsock.cid = 4;
           environment.systemPackages = with pkgs; [
             htop
           ];
