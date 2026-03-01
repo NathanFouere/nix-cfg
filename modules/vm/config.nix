@@ -15,7 +15,7 @@
       # cf . https://microvm-nix.github.io/microvm.nix/options.html
       vm-one = {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        autostart = true;
+        autostart = false;
         restartIfChanged = true;
         config = {
           microvm.hypervisor = "qemu";
@@ -45,7 +45,7 @@
       };
       vm-two = {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        autostart = true;
+        autostart = false;
         restartIfChanged = true;
         config = {
           microvm.hypervisor = "qemu";
