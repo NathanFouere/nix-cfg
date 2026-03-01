@@ -7,6 +7,10 @@
 }:
 {
   config = {
+    environment.systemPackages = with pkgs; [
+      qemu
+    ];
+
     microvm.vms = {
       # cf . https://microvm-nix.github.io/microvm.nix/options.html
       vm-one = {
