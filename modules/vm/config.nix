@@ -14,7 +14,7 @@
         autostart = true;
         restartIfChanged = true;
         config = {
-          microvm.hypervisor = "qemu";
+          microvm.hypervisor = "cloud-hypervisor";
           microvm.vcpu = 2;
           microvm.mem = 2048;
           microvm.interfaces = [
@@ -44,7 +44,7 @@
         autostart = true;
         restartIfChanged = true;
         config = {
-          microvm.hypervisor = "qemu";
+          microvm.hypervisor = "cloud-hypervisor";
           microvm.vcpu = 2;
           microvm.mem = 2048;
           microvm.interfaces = [
