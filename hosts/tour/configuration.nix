@@ -17,6 +17,7 @@
     ../../modules/system/agenix.nix
     ../../modules/system/cleanup.nix
     ../../modules/system/ai-host.nix
+    ../../modules/vm/config.nix
   ];
 
   networking.hostName = "tour";
@@ -36,7 +37,7 @@
 
   users.users.nathanf.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA5l/UUW0KQzQpqN+04f4QiknEqFJhm1ehXNX61OPQIz nathanfouere@tutanota.com" # laptop
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPjeepX6RNKZ7s6HOy3yGlSF+EUDztviuL+iTgFxZQOl nathanfouere@tutanota.com" # thinkcentre-1
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGt1eMrTeYJ+cG9LkLotYKvRpeWwNEjq1HF+XjZUdQ1 nathanfouere@tutanota.com" # thinkcentre-1
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com" # thinkcentre-2
   ];
 
