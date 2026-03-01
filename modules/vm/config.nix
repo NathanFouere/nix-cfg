@@ -15,7 +15,7 @@
       # cf . https://microvm-nix.github.io/microvm.nix/options.html
       vm-one = {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        autostart = false;
+        autostart = true;
         restartIfChanged = true;
         config = {
           microvm.hypervisor = "cloud-hypervisor";
@@ -30,7 +30,7 @@
       };
       vm-two = {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        autostart = false;
+        autostart = true;
         restartIfChanged = true;
         config = {
           microvm.hypervisor = "cloud-hypervisor";
