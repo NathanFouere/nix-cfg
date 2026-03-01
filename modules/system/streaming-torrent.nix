@@ -6,8 +6,8 @@
 {
   config = {
     services.deluge = {
-       enable = true;
-       web.enable = true;
+      enable = true;
+      web.enable = true;
     };
 
     services.radarr = {
