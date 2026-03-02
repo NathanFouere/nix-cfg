@@ -8,7 +8,7 @@
 {
   config = {
     microvm.vms = {
-      # cf . https://microvm-nix.github.io/microvm.nix/options.html
+      # cf .  https://microvm-nix.github.io/microvm.nix/options.html
       vm-one = {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         autostart = true;
