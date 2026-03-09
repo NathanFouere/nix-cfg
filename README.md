@@ -84,4 +84,4 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 * https://microvm-nix.github.io/microvm.nix/simple-network.html
 * https://markaicode.com/ubuntu-networking-comparison/
 * https://www.cloudhypervisor.org/docs/prologue/commands/
-* https://github.com/nix-community/disko/blob/master/docs/disko-images.md
+* https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
