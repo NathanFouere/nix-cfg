@@ -6,13 +6,43 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/base.nix
-    ../../modules/system/agenix.nix
-    ../../modules/system/cleanup.nix
-    ../../modules/vm/config.nix
+    ../../modules/system/common/base.nix
+    ../../modules/system/server/base-server.nix
+    ../../modules/system/common/agenix.nix
+    ../../modules/system/common/cleanup.nix
+    ../../modules/system/server/vm/vm-k3s-server-n-client.nix
   ];
 
   networking.hostName = "thinkcentre-1";
+
+  # cf . https://microvm-nix.github.io/microvm.nix/simple-network.html
+  systemd.network.networks."10-lan" = {
+    matchConfig.Name = [
+      "en*"
+      "vm-*"
+    ];
+    networkConfig = {
+      Bridge = "br0";
+    };
+  };
+
+  systemd.network.netdevs."br0" = {
+    netdevConfig = {
+      Name = "br0";
+      Kind = "bridge";
+    };
+  };
+
+  systemd.network.networks."10-lan-bridge" = {
+    matchConfig.Name = "br0";
+    networkConfig = {
+      Address = [ "192.168.0.210/24" ];
+      Gateway = "192.168.0.1";
+      DNS = [ "192.168.0.1" ];
+      IPv6AcceptRA = true;
+    };
+    linkConfig.RequiredForOnline = "routable";
+  };
 
   system.stateVersion = "25.11";
 

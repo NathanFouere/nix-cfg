@@ -15,9 +15,6 @@
       "flakes"
     ];
 
-    # Enable networking
-    networking.networkmanager.enable = true;
-
     # Set your time zone.
     time.timeZone = "Europe/Paris";
 
@@ -56,7 +53,7 @@
     programs.nix-ld.enable = true;
 
     environment.systemPackages = with pkgs; [
-      nix-sweep
+      openssl
     ];
   };
 }

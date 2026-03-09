@@ -28,6 +28,10 @@
       url = "github:microvm-nix/microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -73,6 +77,7 @@
           inputs.agenix.nixosModules.default
           inputs.microvm.nixosModules.host
           inputs.nix-sweep.nixosModules.default
+          inputs.disko.nixosModules.disko
         ];
       };
 
@@ -84,6 +89,7 @@
           inputs.agenix.nixosModules.default
           inputs.microvm.nixosModules.host
           inputs.nix-sweep.nixosModules.default
+          inputs.disko.nixosModules.disko
         ];
       };
 
