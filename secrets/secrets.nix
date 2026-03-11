@@ -15,4 +15,9 @@ in
     tour
   ]
   ++ systems;
+  "k3s-token.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }

@@ -1,7 +1,12 @@
 {
+  pkgs,
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+    nix-sweep
+  ];
+
   services.nix-sweep = {
     enable = true;
     interval = "daily";

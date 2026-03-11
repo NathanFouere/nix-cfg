@@ -6,18 +6,17 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/base.nix
-    ../../modules/system/base-perso.nix
-    ../../modules/system/stylix.nix
-    ../../modules/system/zsh.nix
-    ../../modules/system/gnome.nix
-    ../../modules/system/docker.nix
-    ../../modules/system/vial.nix
-    ../../modules/system/nvidia.nix
-    ../../modules/system/agenix.nix
-    ../../modules/system/cleanup.nix
-    ../../modules/system/ai-host.nix
-    ../../modules/vm/config.nix
+    ../../modules/system/common/base.nix
+    ../../modules/system/normal/base-perso.nix
+    ../../modules/system/normal/stylix.nix
+    ../../modules/system/normal/zsh.nix
+    ../../modules/system/normal/gnome.nix
+    ../../modules/system/normal/docker.nix
+    ../../modules/system/normal/vial.nix
+    ../../modules/system/normal/nvidia.nix
+    ../../modules/system/common/agenix.nix
+    ../../modules/system/common/cleanup.nix
+    ../../modules/system/normal/ai-host.nix
   ];
 
   networking.hostName = "tour";

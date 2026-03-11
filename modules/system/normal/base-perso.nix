@@ -5,6 +5,10 @@
 {
   config = {
 
+    # Enable networking
+    # Pour voir la différence entre NetworkManager et systemd-networkd se référer à https://markaicode.com/ubuntu-networking-comparison/
+    networking.networkmanager.enable = true;
+
     # Enable sound with pipewire.
     services.pulseaudio = {
       enable = false;

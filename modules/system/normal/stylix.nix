@@ -7,7 +7,7 @@
   stylix.enable = true;
   stylix.targets.qt.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  stylix.image = ../../assets/wallpaper/dark.png;
+  stylix.image = ../../../assets/wallpaper/dark.png;
   stylix.polarity = "dark";
   stylix.opacity = {
     desktop = 0.9;

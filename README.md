@@ -53,6 +53,13 @@ Connect to the host "tour" and run the following command to run opencode with ol
 ollama launch opencode
 ```
 
+## Cloud-Hypervisor
+
+To ping a running vm from the host:
+```bash
+sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
+```
+
 ## Sources
 
 * https://www.youtube.com/watch?v=a67Sv4Mbxmc
@@ -71,3 +78,10 @@ ollama launch opencode
 * https://nlewo.github.io/nixos-manual-sphinx/index.html
 * https://github.com/appleboy/ssh-action
 * https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/index.html
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/cluster/k3s/docs/USAGE.md
+* https://docs.k3s.io/cli/token
+* https://github.com/microvm-nix/microvm.nix/blob/main/doc/src/microvm-command.md
+* https://microvm-nix.github.io/microvm.nix/simple-network.html
+* https://markaicode.com/ubuntu-networking-comparison/
+* https://www.cloudhypervisor.org/docs/prologue/commands/
+* https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
