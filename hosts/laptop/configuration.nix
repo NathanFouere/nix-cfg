@@ -18,6 +18,7 @@
     ../../modules/system/common/cleanup.nix
     ../../modules/system/normal/ai-host.nix
     ../../modules/system/normal/streaming-torrent.nix
+    ../../modules/system/normal/deploy.nix
   ];
 
   networking.hostName = "laptop";

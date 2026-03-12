@@ -1,5 +1,4 @@
 {
-  config,
   ...
 }:
 {
@@ -7,7 +6,7 @@
     services.k3s = {
       enable = true;
       role = "server";
-      token = config.age.secrets.k3s-token.path;
+      tokenFile = "/run/agenix/k3s-token";
       clusterInit = true;
     };
   };

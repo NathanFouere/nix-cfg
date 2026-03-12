@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   nixpkgs,
   pkgs,
   microvm,
@@ -22,7 +23,12 @@ in
     ];
     microvm.vms = {
       vm-k3s-s = k3sVM {
-        inherit config nixpkgs pkgs;
+        inherit
+          config
+          inputs
+          nixpkgs
+          pkgs
+          ;
         name = "vm-k3s-s";
         ip = "192.168.0.211";
         mac = "02:00:00:00:00:01";
@@ -31,7 +37,12 @@ in
         inherit sshKey;
       };
       vm-k3s-c-1 = k3sVM {
-        inherit config nixpkgs pkgs;
+        inherit
+          config
+          inputs
+          nixpkgs
+          pkgs
+          ;
         name = "vm-k3s-c-1";
         ip = "192.168.0.212";
         mac = "02:00:00:00:00:02";
