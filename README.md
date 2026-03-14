@@ -85,3 +85,5 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 * https://markaicode.com/ubuntu-networking-comparison/
 * https://www.cloudhypervisor.org/docs/prologue/commands/
 * https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
+* https://xeiaso.net/blog/prometheus-grafana-loki-nixos-2020-11-20/
+* https://nixos.wiki/wiki/Grafana

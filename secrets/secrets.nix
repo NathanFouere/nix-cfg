@@ -20,4 +20,9 @@ in
     tour
   ]
   ++ systems;
+  "grafana-secret-key.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }

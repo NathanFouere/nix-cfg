@@ -22,9 +22,6 @@
       vim_mode = false;
       show_edit_predictions = true;
       show_completions_on_input = true;
-      scrollbar = {
-        show = "never";
-      };
       indent_guides = {
         enabled = true;
         coloring = "indent_aware";

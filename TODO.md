@@ -8,7 +8,10 @@
   - [x] lancer systeme k3s
   - [x] faire communiquer un server et un agent sur une vm
   - [x] faire communiquer 2 agents d'une vm avec server de l'autre
-  - [ ] mettre en place dashboard pour monitorer le cluster
+  - [ ] setup flux
+  - [ ] déployer apps sur le cluster
+    - [ ] president-challenge
+    - [ ] in browser microservice
 - [ ] Utiliser une machine / vm comme noeud d'entrée au réseau local afin d'enlever la dépendance à taiscale sur chaque machine
 - [ ] Créer machine qui build les configs et utiliser cacher grâce à hydra (https://github.com/NixOS/hydra)
 - [ ] Regener automatiquement la clé pour tailscale tous les mois
