@@ -23,7 +23,7 @@
       show_edit_predictions = true;
       show_completions_on_input = true;
       scrollbar = {
-        show = "never";
+        show = "always";
       };
       indent_guides = {
         enabled = true;
@@ -38,8 +38,8 @@
         git_status = true;
       };
       centered_layout = {
-        left_padding = 0.15;
-        right_padding = 0.15;
+        left_padding = 0.10;
+        right_padding = 0.10;
       };
       assistant = {
         enabled = true;
