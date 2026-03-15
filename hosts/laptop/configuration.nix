@@ -13,10 +13,8 @@
     ../../modules/system/normal/gnome.nix
     ../../modules/system/normal/docker.nix
     ../../modules/system/normal/vial.nix
-    ../../modules/system/normal/nvidia.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
-    ../../modules/system/normal/ai-host.nix
     ../../modules/system/normal/streaming-torrent.nix
     ../../modules/system/normal/deploy.nix
   ];

@@ -65,8 +65,6 @@
 
     environment.systemPackages = with pkgs; [
       htop
-      k9s
-      kubectl
     ];
 
     services.getty.autologinUser = "root";
