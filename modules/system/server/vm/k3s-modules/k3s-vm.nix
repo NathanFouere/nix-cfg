@@ -12,7 +12,9 @@
   cid,
   role ? "agent",
   sshKey,
-  serverAddr ? "https://192.168.0.211:6443",
+  serverAddr,
+  gateway,
+  dns,
   ...
 }:
 {
@@ -21,7 +23,7 @@
 
   config = {
     imports = [
-      (if role == "server" then ./server.nix else ./agent.nix)
+      (if role == "server" then ./server.nix else (import ./agent.nix { inherit serverAddr; }))
     ];
     microvm.hypervisor = "cloud-hypervisor";
     microvm.vcpu = 1;
@@ -54,11 +56,6 @@
         PasswordAuthentication = false;
       };
     };
-
-    networking.firewall.allowedTCPPorts = [
-      22 # SSH
-      6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-    ];
     networking.firewall.allowedUDPPorts = [
       472 # k3s, flannel: required if using multi-node for inter-node networking
     ];
@@ -95,8 +92,8 @@
       matchConfig.Type = "ether";
       networkConfig = {
         Address = [ "${ip}/24" ];
-        Gateway = "192.168.0.1";
-        DNS = [ "192.168.0.1" ];
+        Gateway = gateway;
+        DNS = [ dns ];
         DHCP = "no";
       };
     };

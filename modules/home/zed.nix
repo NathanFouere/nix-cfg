@@ -3,6 +3,7 @@
 }:
 
 {
+  # cf . https://nohup.no/zed-editor/
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -44,6 +45,9 @@
       assistant = {
         enabled = true;
         provider = "copilot";
+      };
+      env = {
+        TERM = "ghostty";
       };
     };
   };
