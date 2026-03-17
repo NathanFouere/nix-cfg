@@ -36,20 +36,13 @@
   systemd.network.networks."10-lan-bridge" = {
     matchConfig.Name = "br0";
     networkConfig = {
-      Address = [ "192.168.0.220/24" ];
-      Gateway = "192.168.0.1";
-      DNS = [ "192.168.0.1" ];
+      Address = [ "192.168.1.220/24" ];
+      Gateway = "192.168.1.1";
+      DNS = [ "192.168.1.1" ];
       IPv6AcceptRA = true;
     };
     linkConfig.RequiredForOnline = "routable";
   };
-
-  # Virtualisation support
-  boot.kernelModules = [
-    "kvm-intel"
-    "kvm-amd"
-  ];
-  virtualisation.libvirtd.enable = true;
 
   system.stateVersion = "25.11";
 

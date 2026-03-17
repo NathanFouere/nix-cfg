@@ -6,7 +6,7 @@
   fonts.packages = with pkgs; [ _0xproto ];
   stylix.enable = true;
   stylix.targets.qt.enable = false;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/espresso.yaml";
   stylix.image = ../../../assets/wallpaper/dark.png;
   stylix.polarity = "dark";
   stylix.opacity = {

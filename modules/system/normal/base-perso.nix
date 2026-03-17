@@ -59,11 +59,5 @@
       obs-studio
       pciutils
     ];
-
-    # cf . https://nixos.wiki/wiki/Firewall
-    networking.firewall = {
-      enable = true;
-      allowedTCPPorts = [ 4444 ]; # temporaire
-    };
   };
 }
