@@ -4,11 +4,18 @@
   - [x] Setup deux vm par think-center
 - [ ] Créer vm pour modele IA locaux sur tour
   - [ ] Tester acces depuis laptop du modele tournant sur la tour
+- [ ] mettre en place nix-anywhere
 - [x] Mettre en place cluster kubernetes (1 vm master, 3 vm worker)
   - [x] lancer systeme k3s
   - [x] faire communiquer un server et un agent sur une vm
   - [x] faire communiquer 2 agents d'une vm avec server de l'autre
   - [ ] mettre en place dashboard pour monitorer le cluster
+  - [ ] partager kubeconfig
+  - [ ] résoudre soucis unclean termination
+  - [ ] setup fluxcd
+    - [x] installer flux operator
+    - [ ] utiliser flux operator pour installer flux
+    - [ ] rendre accessible flux ui depuis l'exterieur
 - [ ] Utiliser une machine / vm comme noeud d'entrée au réseau local afin d'enlever la dépendance à taiscale sur chaque machine
 - [ ] Créer machine qui build les configs et utiliser cacher grâce à hydra (https://github.com/NixOS/hydra)
 - [ ] Regener automatiquement la clé pour tailscale tous les mois

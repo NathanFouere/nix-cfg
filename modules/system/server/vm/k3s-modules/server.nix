@@ -22,6 +22,7 @@
       git
       kubectl
       k9s
+      fluxcd-operator
     ];
 
     systemd.services.flux-operator-install = {
@@ -34,7 +35,7 @@
       };
       script = ''
         # Skip if the release is already deployed
-        if ${pkgs.kubernetes-helm}/bin/helm status flux-operator --namespace flux-system; then
+        if ${pkgs.kubernetes-helm}/bin/helm status flux-operator --namespace flux-system >/dev/null 2>&1; then
             echo "flux-operator is already installed, skipping."
             exit 0
         fi
@@ -46,7 +47,7 @@
         if ! ${pkgs.kubernetes-helm}/bin/helm install flux-operator \
           oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator \
           --namespace flux-system \
-          --create-namespace; then
+          --create-namespace >/dev/null 2>&1; then
             echo "flux-operator installation failed."
             exit 1
         fi

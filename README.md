@@ -85,3 +85,4 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 * https://markaicode.com/ubuntu-networking-comparison/
 * https://www.cloudhypervisor.org/docs/prologue/commands/
 * https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
+* https://docs.k3s.io/cluster-access
