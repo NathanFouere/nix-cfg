@@ -10,12 +10,15 @@
   - [x] faire communiquer un server et un agent sur une vm
   - [x] faire communiquer 2 agents d'une vm avec server de l'autre
   - [ ] mettre en place dashboard pour monitorer le cluster
-  - [ ] partager kubeconfig
+  - [x] partager kubeconfig
   - [ ] résoudre soucis unclean termination
+    - [ ] le soucis vient du fait que quand on rebuild cela force la terminaison des vm, sans lancer le stop "clean" de k3S, il faut donc faire en sorte que "deploy" lance d'abord un "stop" clean
   - [ ] setup fluxcd
     - [x] installer flux operator
     - [ ] utiliser flux operator pour installer flux
     - [ ] rendre accessible flux ui depuis l'exterieur
+    - [ ] rendre accessible traefik ui depuis l'exterieur
+    - [ ] deployer president-challenge sur le cluster
 - [ ] Utiliser une machine / vm comme noeud d'entrée au réseau local afin d'enlever la dépendance à taiscale sur chaque machine
 - [ ] Créer machine qui build les configs et utiliser cacher grâce à hydra (https://github.com/NixOS/hydra)
 - [ ] Regener automatiquement la clé pour tailscale tous les mois

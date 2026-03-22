@@ -4,17 +4,45 @@
 }:
 {
   config = {
-    networking.firewall.allowedTCPPorts = [
-      22 # SSH
-      6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-    ];
-
     services.k3s = {
       enable = true;
       role = "server";
       tokenFile = "/run/agenix/k3s-token";
       clusterInit = true;
     };
+
+    # cf . https://docs.k3s.io/add-ons/helm#customizing-packaged-components-with-helmchartconfig
+    # cf . https://doc.traefik.io/traefik/setup/kubernetes/
+    environment.etc."k3s/traefik-config.yaml".text = ''
+      apiVersion: helm.cattle.io/v1
+      kind: HelmChartConfig
+      metadata:
+        name: traefik
+        namespace: kube-system
+      spec:
+        valuesContent: |-
+          image:
+            repository: docker.io/library/traefik
+            tag: 3.3.5
+          api:
+            dashboard: true
+            insecure: true
+          ports:
+            web:
+              forwardedHeaders:
+                trustedIPs:
+                  - 10.0.0.0/8
+    '';
+
+    # Créer le lien symbolique vers le répertoire manifests de k3s
+    systemd.tmpfiles.settings."10-k3s-traefik-link" = {
+      "/var/lib/rancher/k3s/server/manifests/traefik-config.yaml" = {
+        L = { # "L" => creer un lien symbolique
+          argument = "/etc/k3s/traefik-config.yaml"; # => crer un lien symbolique par rapport à la config créer plus haut
+        };
+      };
+    };
+
 
     environment.systemPackages = with pkgs; [
       kubernetes-helm

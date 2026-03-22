@@ -2,9 +2,6 @@
 {
   config = {
 
-    networking.firewall.allowedTCPPorts = [
-      22 # SSH
-    ];
 
     services.k3s = {
       enable = true;

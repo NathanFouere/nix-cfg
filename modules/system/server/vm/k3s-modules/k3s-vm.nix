@@ -27,7 +27,7 @@
     ];
     microvm.hypervisor = "cloud-hypervisor";
     microvm.vcpu = 1;
-    microvm.mem = 2048;
+    microvm.mem = 3 * 1024;
 
     microvm.shares = [
       {
@@ -56,9 +56,21 @@
         PasswordAuthentication = false;
       };
     };
-    networking.firewall.allowedUDPPorts = [
-      472 # k3s, flannel: required if using multi-node for inter-node networking
-    ];
+    ## TODO => vérifier si besoin sur toutes les machines ou que le server
+    networking.firewall = {
+      enable = true;
+      # cf . https://github.com/rorosen/k3s-nix <3
+      checkReversePath = false;
+      allowedTCPPorts = [
+        22 # SSH
+        6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+        443
+      ];
+      allowedUDPPorts = [
+        8472 # k3s, flannel: required if using multi-node for inter-node networking
+      ];
+      trustedInterfaces = [ "cni+" "flannel.1" ];
+    };
 
     environment.systemPackages = with pkgs; [
       htop
@@ -89,7 +101,10 @@
     networking.hostName = name;
 
     systemd.network.networks."20-lan" = {
-      matchConfig.Type = "ether";
+      matchConfig.Name = "ens3";
+      # linkConfig = {
+      #   MTUBytes = "1200";
+      # };
       networkConfig = {
         Address = [ "${ip}/24" ];
         Gateway = gateway;

@@ -8,7 +8,7 @@ THINKCENTRE_HOST="admin@thinkcentre-1"
 K3S_VM_NAME="vm-k3s-s"
 K3S_SERVER_IP="192.168.1.211"
 K3S_SERVER_PORT="6443"
-KUBECONFIG_LOCAL_PATH="$HOME/.kube/config-k3s"
+KUBECONFIG_LOCAL_PATH="$HOME/.kube/config"
 KUBECONFIG_PATH="/etc/rancher/k3s/k3s.yaml"
 
 echo "Fetching k3s kubeconfig from $THINKCENTRE_HOST/$K3S_VM_NAME..."

@@ -60,6 +60,12 @@ To ping a running vm from the host:
 sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 ```
 
+## Get the K3S conf
+
+```bash
+source ./scripts/fetch-k3s-kubeconfig.sh
+```
+
 ## Sources
 
 * https://www.youtube.com/watch?v=a67Sv4Mbxmc
@@ -86,3 +92,4 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 * https://www.cloudhypervisor.org/docs/prologue/commands/
 * https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
 * https://docs.k3s.io/cluster-access
+* https://oneuptime.com/blog/post/2026-03-06-use-flux-operator-managing-flux-instances/view

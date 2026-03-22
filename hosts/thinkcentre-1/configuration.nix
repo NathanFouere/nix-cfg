@@ -44,14 +44,6 @@
     linkConfig.RequiredForOnline = "routable";
   };
 
-
-  # Virtualisation support
-  boot.kernelModules = [
-    "kvm-intel"
-    "kvm-amd"
-  ];
-  virtualisation.libvirtd.enable = true;
-
   system.stateVersion = "25.11";
 
   users.users.admin = {
