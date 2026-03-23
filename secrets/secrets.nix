@@ -20,4 +20,19 @@ in
     tour
   ]
   ++ systems;
+  "cloudflare-cert.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
+  "cloudflare-origin-cert.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
+  "cloudflare-origin-key.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }

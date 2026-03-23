@@ -19,6 +19,7 @@
     ../../modules/system/normal/ai-host.nix
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
+    ../../modules/system/normal/prog.nix
   ];
 
   networking.hostName = "tour";

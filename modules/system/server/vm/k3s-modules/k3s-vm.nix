@@ -65,6 +65,8 @@
         22 # SSH
         6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
         443
+        30000 # Traefik HTTP NodePort (for Let's Encrypt HTTP challenge)
+        30001 # Traefik HTTPS NodePort
       ];
       allowedUDPPorts = [
         8472 # k3s, flannel: required if using multi-node for inter-node networking
