@@ -4,14 +4,17 @@
 }:
 {
   config = {
-    services.cloudflared.enable = true;
 
-    # todo => setup la bonne addresse quand disponible
-    services.cloudflared.tunnels."4ef493f1-ee79-42df-bcba-41c588fe370d" = {
-      credentialsFile = "/run/agenix/cloudflare-cert";
-      default = "http_status:404";
-      ingress = {
-        "traefik.nathan-fouere.com" = "http://localhost:30000";
+    services.cloudflared = {
+      enable = true;
+      tunnels = {
+        "ba6598c7-7b06-4fc2-a206-a90df5d418ac" = {
+          credentialsFile = "/run/agenix/cloudflared-tunnel-cred";
+          default = "http_status:404";
+          ingress = {
+            "traefik.nathan-fouere.com" = "http://localhost:30000";
+          };
+        };
       };
     };
 

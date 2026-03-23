@@ -20,7 +20,7 @@ in
     tour
   ]
   ++ systems;
-  "cloudflare-cert.age".publicKeys = [
+  "cloudflared-tunnel-cred.age".publicKeys = [
     laptop
     tour
   ]
