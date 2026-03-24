@@ -17,6 +17,7 @@
       "catppuccin-icons"
       "copilot"
       "base16"
+      "mermaid"
     ];
     userSettings = {
       hour_format = "hour24";

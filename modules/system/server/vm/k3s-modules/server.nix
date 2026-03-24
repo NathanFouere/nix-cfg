@@ -12,7 +12,7 @@
           credentialsFile = "/run/agenix/cloudflared-tunnel-cred";
           default = "http_status:404";
           ingress = {
-            "traefik.nathan-fouere.com" = "https://localhost:30001";
+            "traefik.nathan-fouere.com" = "http://localhost:30000";
           };
         };
       };
@@ -65,20 +65,14 @@
               enabled: true
               matchRule: Host(`traefik.nathan-fouere.com`)
               entryPoints:
+                - web
                 - websecure
               middlewares:
                 - name: dashboard-auth
 
-          # Creates a BasicAuth Middleware and Secret for the Dashboard Security
+          # Creates a BasicAuth Middleware for the Dashboard Security
+          # Secret is created via systemd service using agenix
           extraObjects:
-            - apiVersion: v1
-              kind: Secret
-              metadata:
-                name: dashboard-auth-secret
-              type: kubernetes.io/basic-auth
-              stringData:
-                username: admin
-                password: "P@ssw0rd"      # Replace with an Actual Password
             - apiVersion: traefik.io/v1alpha1
               kind: Middleware
               metadata:
@@ -215,13 +209,21 @@
         done
 
         CERT_PATH="/run/agenix/cloudflare-origin-cert"
-        CERT_PATH="/run/agenix/cloudflare-origin-cert"
         KEY_PATH="/run/agenix/cloudflare-origin-key"
+        DASHBOARD_PSWD_PATH="/run/agenix/traefik-dashboard-pswd"
 
-        # Créer le secret dans le namespace kube-system (où tourne Traefik)
+        # Créer le secret TLS dans le namespace kube-system (où tourne Traefik)
         ${pkgs.kubectl}/bin/kubectl create secret tls cloudflare-origin-tls \
           --cert="$CERT_PATH" \
           --key="$KEY_PATH" \
+          --namespace=kube-system \
+          --dry-run=client -o yaml | ${pkgs.kubectl}/bin/kubectl apply -f -
+
+        # Créer le secret BasicAuth pour le dashboard Traefik
+        ${pkgs.kubectl}/bin/kubectl create secret generic dashboard-auth-secret \
+          --from-literal=username=admin \
+          --from-literal=password=$(cat "$DASHBOARD_PSWD_PATH") \
+          --type=kubernetes.io/basic-auth \
           --namespace=kube-system \
           --dry-run=client -o yaml | ${pkgs.kubectl}/bin/kubectl apply -f -
       '';

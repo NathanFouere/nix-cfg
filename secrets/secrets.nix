@@ -35,4 +35,9 @@ in
     tour
   ]
   ++ systems;
+  "traefik-dashboard-pswd.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }
