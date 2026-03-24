@@ -12,7 +12,7 @@
           credentialsFile = "/run/agenix/cloudflared-tunnel-cred";
           default = "http_status:404";
           ingress = {
-            "traefik.nathan-fouere.com" = "http://localhost:30000";
+            "traefik.nathan-fouere.com" = "https://localhost:30001";
           };
         };
       };
