@@ -66,7 +66,7 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 source ./scripts/fetch-k3s-kubeconfig.sh
 ```
 
-## K3S 
+## Architecture
 
 ```mermaid
 graph TD
