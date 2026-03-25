@@ -17,10 +17,10 @@
     ../../modules/system/common/cleanup.nix
     ../../modules/system/normal/streaming-torrent.nix
     ../../modules/system/normal/deploy.nix
+    ../../modules/system/normal/k8s-management.nix
   ];
 
   networking.hostName = "laptop";
-
   system.stateVersion = "24.11";
 
   users.users.nathanf = {

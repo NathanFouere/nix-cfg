@@ -12,7 +12,9 @@
   cid,
   role ? "agent",
   sshKey,
-  serverAddr ? "https://192.168.0.211:6443",
+  serverAddr,
+  gateway,
+  dns,
   ...
 }:
 {
@@ -21,11 +23,11 @@
 
   config = {
     imports = [
-      (if role == "server" then ./server.nix else ./agent.nix)
+      (if role == "server" then ./server.nix else (import ./agent.nix { inherit serverAddr; }))
     ];
     microvm.hypervisor = "cloud-hypervisor";
     microvm.vcpu = 1;
-    microvm.mem = 2048;
+    microvm.mem = 3 * 1024;
 
     microvm.shares = [
       {
@@ -55,18 +57,8 @@
       };
     };
 
-    networking.firewall.allowedTCPPorts = [
-      22 # SSH
-      6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-    ];
-    networking.firewall.allowedUDPPorts = [
-      472 # k3s, flannel: required if using multi-node for inter-node networking
-    ];
-
     environment.systemPackages = with pkgs; [
       htop
-      k9s
-      kubectl
     ];
 
     services.getty.autologinUser = "root";
@@ -94,11 +86,14 @@
     networking.hostName = name;
 
     systemd.network.networks."20-lan" = {
-      matchConfig.Type = "ether";
+      matchConfig.Name = "ens3";
+      # linkConfig = {
+      #   MTUBytes = "1200";
+      # };
       networkConfig = {
         Address = [ "${ip}/24" ];
-        Gateway = "192.168.0.1";
-        DNS = [ "192.168.0.1" ];
+        Gateway = gateway;
+        DNS = [ dns ];
         DHCP = "no";
       };
     };

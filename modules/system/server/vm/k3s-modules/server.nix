@@ -1,13 +1,14 @@
 {
+  pkgs,
   ...
 }:
 {
-  config = {
-    services.k3s = {
-      enable = true;
-      role = "server";
-      tokenFile = "/run/agenix/k3s-token";
-      clusterInit = true;
-    };
-  };
+  imports = [
+    ./server/firewall.nix
+    ./server/cloudflared.nix
+    ./server/k3s.nix
+    ./server/traefik.nix
+    ./server/packages.nix
+    ./server/kubernetes-services.nix
+  ];
 }

@@ -3,6 +3,7 @@
 }:
 
 {
+  # cf . https://nohup.no/zed-editor/
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -16,6 +17,7 @@
       "catppuccin-icons"
       "copilot"
       "base16"
+      "mermaid"
     ];
     userSettings = {
       hour_format = "hour24";
@@ -44,6 +46,9 @@
       assistant = {
         enabled = true;
         provider = "copilot";
+      };
+      env = {
+        TERM = "ghostty";
       };
     };
   };

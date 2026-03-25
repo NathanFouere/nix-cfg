@@ -12,6 +12,14 @@ let
 
   # SSH key for these VMs (thinkcentre-2)
   sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com";
+
+  subnet = "192.168.1";
+
+  gateway = "${subnet}.1";
+
+  dns = "${subnet}.1";
+
+  serverAddr = "https://${subnet}.211:6443";
 in
 {
   config = {
@@ -30,11 +38,14 @@ in
           pkgs
           ;
         name = "vm-k3s-c-2";
-        ip = "192.168.0.221";
+        ip = "${subnet}.221";
         mac = "02:00:00:00:00:03";
         cid = 3;
         role = "agent";
+        inherit gateway;
+        inherit dns;
         inherit sshKey;
+        inherit serverAddr;
       };
       vm-k3s-c-3 = k3sVM {
         inherit
@@ -44,11 +55,14 @@ in
           pkgs
           ;
         name = "vm-k3s-c-3";
-        ip = "192.168.0.222";
+        ip = "${subnet}.222";
         mac = "02:00:00:00:00:04";
         cid = 4;
         role = "agent";
+        inherit gateway;
+        inherit dns;
         inherit sshKey;
+        inherit serverAddr;
       };
     };
   };
