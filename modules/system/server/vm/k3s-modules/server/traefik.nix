@@ -107,7 +107,8 @@
     # Créer le lien symbolique vers le répertoire manifests de k3s
     systemd.tmpfiles.settings."10-k3s-traefik-link" = {
       "/var/lib/rancher/k3s/server/manifests/traefik-config.yaml" = {
-        L = { # "L" => creer un lien symbolique
+        L = {
+          # "L" => creer un lien symbolique
           argument = "/etc/k3s/traefik-config.yaml"; # => crer un lien symbolique par rapport à la config créer plus haut
         };
       };

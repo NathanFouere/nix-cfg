@@ -13,11 +13,11 @@ let
   # SSH key for these VMs (thinkcentre-2)
   sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com";
 
-  subnet  = "192.168.1";
+  subnet = "192.168.1";
 
   gateway = "${subnet}.1";
 
-  dns     = "${subnet}.1";
+  dns = "${subnet}.1";
 
   serverAddr = "https://${subnet}.211:6443";
 in
