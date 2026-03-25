@@ -70,13 +70,6 @@ source ./scripts/fetch-k3s-kubeconfig.sh
 
 ```mermaid
 graph TD
-    %% Définition des styles
-    classDef external fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef cloudflare fill:#f38020,stroke:#333,stroke-width:2px,color:white;
-    classDef home fill:#e1f5fe,stroke:#333,stroke-width:2px;
-    classDef cluster fill:#fff9c4,stroke:#333,stroke-width:2px;
-    classDef node fill:#e8f5e9,stroke:#333,stroke-width:1px;
-
     %% Noeuds
     User((Utilisateur Externe)):::external
 
