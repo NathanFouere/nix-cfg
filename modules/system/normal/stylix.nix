@@ -6,8 +6,8 @@
   fonts.packages = with pkgs; [ _0xproto ];
   stylix.enable = true;
   stylix.targets.qt.enable = false;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/espresso.yaml";
-  stylix.image = ../../../assets/wallpaper/dark.png;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/embers-light.yaml";
+  stylix.image = ../../../assets/wallpaper/embers.png;
   stylix.polarity = "dark";
   stylix.opacity = {
     desktop = 0.9;
