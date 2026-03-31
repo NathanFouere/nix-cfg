@@ -1,3 +1,4 @@
+# cf . https://fluxoperator.dev/docs/web-ui/ingress/
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
