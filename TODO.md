@@ -2,8 +2,6 @@
 
 - [x] Mettre en place micro-vm
   - [x] Setup deux vm par think-center
-- [ ] Créer vm pour modele IA locaux sur tour
-  - [ ] Tester acces depuis laptop du modele tournant sur la tour
 - [ ] mettre en place nix-anywhere
 - [x] Mettre en place cluster kubernetes (1 vm master, 3 vm worker)
   - [x] lancer systeme k3s
@@ -15,10 +13,10 @@
     - [ ] le soucis vient du fait que quand on rebuild cela force la terminaison des vm, sans lancer le stop "clean" de k3S, il faut donc faire en sorte que "deploy" lance d'abord un "stop" clean
   - [ ] setup fluxcd
     - [x] installer flux operator
-    - [ ] utiliser flux operator pour installer flux
+    - [x] utiliser flux operator pour installer flux
     - [ ] rendre accessible flux ui depuis l'exterieur
-    - [ ] rendre accessible traefik ui depuis l'exterieur
-    - [ ] deployer president-challenge sur le cluster
+    - [x] rendre accessible traefik ui depuis l'exterieur
+    - [ ] ajouter service pour appliquer la configuration flux-instance au lancement de la machine
 - [ ] Utiliser une machine / vm comme noeud d'entrée au réseau local afin d'enlever la dépendance à taiscale sur chaque machine
 - [ ] Créer machine qui build les configs et utiliser cacher grâce à hydra (https://github.com/NixOS/hydra)
 - [ ] Regener automatiquement la clé pour tailscale tous les mois

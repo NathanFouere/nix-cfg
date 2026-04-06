@@ -67,7 +67,7 @@
     microvm.volumes = [
       {
         image = "/var/lib/microvms/${name}/disk.img";
-        mountPoint = "/var/lib/k3s";
+        mountPoint = "/var/lib/rancher/k3s";
         autoCreate = true;
         size = 30 * 1024; # 30GB
       }

@@ -68,8 +68,6 @@
             kubernetesGateway:
                enabled: true
 
-
-
           ## Gateway Listeners
           gateway:
             listeners:

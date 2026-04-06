@@ -22,6 +22,6 @@ spec:
     domain: "cluster.local"
   sync:
     kind: GitRepository
-    url: "https://github.com/fluxcd/flux2-kustomize-helm-example"
+    url: "https://github.com/NathanFouere/flux-conf"
     ref: "refs/heads/main"
-    path: "./clusters/staging"
+    path: "./clusters/production"

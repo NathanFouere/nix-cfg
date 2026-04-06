@@ -25,7 +25,7 @@
             exit 0
         fi
 
-        # echo "Installing flux operator..."
+        echo "Installing flux operator..."
 
         # cf. https://fluxoperator.dev/docs/guides/install/
         echo "Installing flux-operator via Helm..."

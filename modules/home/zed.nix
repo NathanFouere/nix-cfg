@@ -36,13 +36,14 @@
       };
       project_panel = {
         button = true;
-        dock = "right";
+        dock = "left";
         git_status = true;
       };
       centered_layout = {
         left_padding = 0.10;
         right_padding = 0.10;
       };
+      format_on_save = "off";
       assistant = {
         enabled = true;
         provider = "copilot";
