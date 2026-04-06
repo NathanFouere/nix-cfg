@@ -66,66 +66,6 @@ sudo ch-remote --api-socket /var/lib/microvms/{{vm-name}}/{{vm-name}}.sock ping
 source ./scripts/fetch-k3s-kubeconfig.sh
 ```
 
-## Architecture
-
-```mermaid
-graph TD
-    %% Noeuds
-    User((Utilisateur Externe)):::external
-
-    %% Groupe Cloudflare (La boite commune)
-    subgraph CF_Zone [Cloudflare]
-        CF_DNS[Cloudflare DNS]:::cloudflare
-        CF_Tunnel[Cloudflare Tunnel]:::cloudflare
-    end
-
-    %% Groupe Réseau Maison
-    subgraph Home_Network [Home Network]
-        direction TB
-        
-        %% Cluster K3s
-        subgraph K3S_Cluster [Cluster K3S]
-            direction TB
-            
-            %% Ingress
-            Traefik[Traefik Ingress Controller]:::cluster
-            
-            %% Applications
-            subgraph Apps [Applications Déployées]
-                App1[Application 1]:::cluster
-                App2[Application 2]:::cluster
-                App3[Application ...]:::cluster
-            end
-
-            %% Infrastructure Physique
-            subgraph Infrastructure [Infrastructure Physique]
-                direction LR
-                subgraph TC1 [ThinkCentre 1]
-                    N1[Noeud 1]:::node
-                    N2[Noeud 2]:::node
-                end
-                subgraph TC2 [ThinkCentre 2]
-                    N3[Noeud 3]:::node
-                    N4[Noeud 4]:::node
-                end
-            end
-        end
-    end
-
-    %% Flux de connexion (sans numérotation pour éviter l'erreur)
-    User -->|Requête HTTPS| CF_DNS
-    CF_DNS -->|Résolution| CF_Tunnel
-    CF_Tunnel -->|Tunnel Sortant| Traefik
-    
-    %% Routage interne
-    Traefik -->|Route| App1
-    Traefik -->|Route| App2
-    Traefik -->|Route| App3
-
-    %% Lien logique applications -> infra
-    Apps -.->|Hébergé sur| Infrastructure
-```
-
 ## Sources
 
 * https://www.youtube.com/watch?v=a67Sv4Mbxmc
