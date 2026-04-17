@@ -10,6 +10,7 @@
       git
       kubectl
       k9s
+      kubeseal
       fluxcd-operator
     ];
   };
