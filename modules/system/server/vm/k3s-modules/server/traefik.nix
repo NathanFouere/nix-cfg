@@ -17,6 +17,16 @@
             web:
               port: 80
               nodePort: 30000
+              forwardedHeaders:
+                trustedIPs:
+                  - 127.0.0.1/32
+              # Instructs this entry point to redirect all traffic to the 'websecure' entry point
+              http:
+                redirections:
+                  entryPoint:
+                    to: websecure
+                    scheme: https
+                    permanent: true
 
             # Defines the HTTPS entry point named 'websecure'
             websecure:
