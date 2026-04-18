@@ -94,3 +94,4 @@ source ./scripts/fetch-k3s-kubeconfig.sh
 * https://docs.k3s.io/cluster-access
 * https://oneuptime.com/blog/post/2026-03-06-use-flux-operator-managing-flux-instances/view
 * https://olai.dev/blog/nix-cloudflare-tunnels/
+* https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/
