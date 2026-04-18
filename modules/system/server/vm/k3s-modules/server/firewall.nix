@@ -1,6 +1,5 @@
 {
   config = {
-    ## TODO => vérifier si besoin sur toutes les machines ou que le server
     networking.firewall = {
       enable = true;
       # cf . https://github.com/rorosen/k3s-nix <3
