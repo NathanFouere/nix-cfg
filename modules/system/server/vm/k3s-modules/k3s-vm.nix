@@ -82,6 +82,7 @@
     ];
 
     microvm.vsock.cid = cid;
+    microvm.socket = "/run/microvm-${name}.sock";
 
     networking.hostName = name;
 

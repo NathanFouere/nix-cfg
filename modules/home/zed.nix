@@ -21,7 +21,7 @@
     ];
     userSettings = {
       hour_format = "hour24";
-      vim_mode = true;
+      vim_mode = false;
       show_edit_predictions = true;
       show_completions_on_input = true;
       scrollbar = {
@@ -50,6 +50,67 @@
       };
       env = {
         TERM = "ghostty";
+      };
+      language_models = {
+        openai_compatible = {
+          "Z.ai" = {
+            api_url = "https://api.z.ai/api/coding/paas/v4";
+            available_models = [
+              {
+                name = "glm-4.6";
+                display_name = "GLM-4.6";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
+                name = "glm-4.7";
+                display_name = "GLM-4.7";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
+                name = "glm-5";
+                display_name = "GLM-5";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
+                name = "glm-5.1";
+                display_name = "GLM-5.1";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+            ];
+          };
+        };
       };
     };
   };
