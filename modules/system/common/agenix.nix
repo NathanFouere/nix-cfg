@@ -14,5 +14,6 @@
     secrets.cloudflare-origin-cert.file = ../../../secrets/cloudflare-origin-cert.age;
     secrets.cloudflare-origin-key.file = ../../../secrets/cloudflare-origin-key.age;
     secrets.traefik-dashboard-pswd.file = ../../../secrets/traefik-dashboard-pswd.age;
+    secrets.nodes-pswd.file = ../../../secrets/nodes-pswd.age;
   };
 }

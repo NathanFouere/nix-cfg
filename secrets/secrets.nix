@@ -40,4 +40,9 @@ in
     tour
   ]
   ++ systems;
+  "nodes-pswd.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }

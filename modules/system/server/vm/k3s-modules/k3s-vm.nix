@@ -49,6 +49,27 @@
     # cf . https://kubernetes.io/docs/reference/kubectl/ for KUBECONFIG
     environment.variables.KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
 
+    # Mot de passe node pour k3s — géré via agenix
+    # k3s lit /etc/rancher/node/password en premier pour authentifier le noeud
+    # cf . https://docs.k3s.io/architecture#node-password-secrets
+    # cf . https://blog.carrio.dev/blog/nixos-agenix-systemd-secrets/
+    systemd.services.k3s-node-password = {
+      description = "Copy k3s node password from agenix secret to expected location";
+      after = [ "run-agenix.mount" ];
+      wants = [ "run-agenix.mount" ];
+      before = [ "k3s.service" ];
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+      script = ''
+        mkdir -p /etc/rancher/node
+        cp /run/agenix/nodes-pswd /etc/rancher/node/password
+        chmod 600 /etc/rancher/node/password
+      '';
+    };
+
     # cf . https://mynixos.com/nixpkgs/options/services.openssh
     services.openssh = {
       enable = true;
@@ -58,7 +79,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      htop
+
     ];
 
     services.getty.autologinUser = "root";
@@ -82,7 +103,8 @@
     ];
 
     microvm.vsock.cid = cid;
-    microvm.socket = "/run/microvm-${name}.sock";
+    # si on indique pas "socket" microvm ne lance pas un down de la machine "propre" cf . https://github.com/microvm-nix/microvm.nix/blob/main/lib/runners/cloud-hypervisor.nix
+    microvm.socket = "/var/lib/microvms/${name}/${name}.sock";
 
     networking.hostName = name;
 
