@@ -8,12 +8,13 @@
     inputs.agenix.packages.${pkgs.system}.default
   ];
   age = {
-    secrets.tailscale.file = ../../../secrets/tailscale.age;
     secrets.k3s-token.file = ../../../secrets/k3s-token.age;
     secrets.cloudflared-tunnel-cred.file = ../../../secrets/cloudflared-tunnel-cred.age;
     secrets.cloudflare-origin-cert.file = ../../../secrets/cloudflare-origin-cert.age;
     secrets.cloudflare-origin-key.file = ../../../secrets/cloudflare-origin-key.age;
     secrets.traefik-dashboard-pswd.file = ../../../secrets/traefik-dashboard-pswd.age;
     secrets.nodes-pswd.file = ../../../secrets/nodes-pswd.age;
+    secrets.tailscale-oauth-id.file = ../../../secrets/tailscale-oauth-id.age;
+    secrets.tailscale-oauth-key.file = ../../../secrets/tailscale-oauth-key.age;
   };
 }

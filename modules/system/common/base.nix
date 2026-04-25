@@ -39,11 +39,6 @@
       enable = true;
     };
 
-    services.tailscale = {
-      enable = true;
-      authKeyFile = config.age.secrets.tailscale.path;
-    };
-
     # Configure console keymap
     console.keyMap = "en";
 
@@ -55,6 +50,7 @@
     environment.systemPackages = with pkgs; [
       openssl
       nixfmt
+      jq
     ];
   };
 }

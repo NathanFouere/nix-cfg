@@ -10,11 +10,6 @@ let
   ];
 in
 {
-  "tailscale.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
   "k3s-token.age".publicKeys = [
     laptop
     tour
@@ -41,6 +36,16 @@ in
   ]
   ++ systems;
   "nodes-pswd.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
+  "tailscale-oauth-id.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
+  "tailscale-oauth-key.age".publicKeys = [
     laptop
     tour
   ]

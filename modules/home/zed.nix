@@ -51,6 +51,11 @@
       env = {
         TERM = "ghostty";
       };
+      autosave = {
+        after_delay = {
+          milliseconds = 100;
+        };
+      };
       language_models = {
         openai_compatible = {
           "Z.ai" = {

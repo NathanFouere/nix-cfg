@@ -11,6 +11,7 @@
             "flux.nathan-fouere.com" = "http://localhost:30000";
             "api-strategia.nathan-fouere.com" = "http://localhost:30000";
             "strategia.nathan-fouere.com" = "http://localhost:30000";
+            "api-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "minio-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "minio-console-president-challenge.nathan-fouere.com" = "http://localhost:30000";

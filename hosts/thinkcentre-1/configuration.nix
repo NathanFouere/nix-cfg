@@ -6,6 +6,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/system/common/tailscale.nix
     ../../modules/system/common/base.nix
     ../../modules/system/server/base-server.nix
     ../../modules/system/common/agenix.nix

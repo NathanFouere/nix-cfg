@@ -11,6 +11,7 @@
       tlafmt
       tlaps
       texliveFull
+      jetbrains.datagrip
     ];
   };
 }

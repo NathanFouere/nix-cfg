@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/common/base.nix
+    ../../modules/system/common/tailscale.nix
     ../../modules/system/normal/base-perso.nix
     ../../modules/system/normal/stylix.nix
     ../../modules/system/normal/zsh.nix
