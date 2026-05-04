@@ -13,7 +13,8 @@
       package = pkgs.ollama-cuda;
       loadModels = [
         "glm-4.7-flash"
-        "deepseek-r1:1.5b"
+        "glm-5:cloud"
+        "glm-5.1:cloud"
       ];
     };
   };

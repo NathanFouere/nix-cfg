@@ -13,8 +13,8 @@
             "strategia.nathan-fouere.com" = "http://localhost:30000";
             "api-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "president-challenge.nathan-fouere.com" = "http://localhost:30000";
-            "minio-president-challenge.nathan-fouere.com" = "http://localhost:30000";
-            "minio-console-president-challenge.nathan-fouere.com" = "http://localhost:30000";
+            "rustfs-president-challenge.nathan-fouere.com" = "http://localhost:30000";
+            "rustfs-console-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "siyuan.nathan-fouere.com" = "http://localhost:30000";
           };
         };
