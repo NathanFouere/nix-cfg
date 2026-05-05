@@ -36,8 +36,20 @@
       };
       project_panel = {
         button = true;
-        dock = "left";
-        git_status = true;
+      };
+      git_panel = {
+        button = true;
+      };
+      collaboration_panel = {
+        button = false;
+      };
+      outline_panel = {
+        button = false;
+      };
+      toolbar = {
+        breadcrumbs = false;
+        quick_actions = false;
+        selections_menu = false;
       };
       centered_layout = {
         left_padding = 0.10;
@@ -46,7 +58,6 @@
       format_on_save = "off";
       assistant = {
         enabled = true;
-        provider = "copilot";
       };
       env = {
         TERM = "ghostty";
@@ -56,6 +67,7 @@
           milliseconds = 100;
         };
       };
+      base_keymap = "VSCode";
       language_models = {
         openai_compatible = {
           "Z.ai" = {

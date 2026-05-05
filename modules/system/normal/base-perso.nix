@@ -58,6 +58,7 @@
       element-desktop
       obs-studio
       pciutils
+      rpi-imager
     ];
   };
 }
