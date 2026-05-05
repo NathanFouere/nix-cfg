@@ -9,7 +9,6 @@
     ./hardware-configuration.nix
     ../../modules/system/common/tailscale.nix
     ../../modules/system/common/base.nix
-    ../../modules/system/server/base-server.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
   ];
@@ -47,9 +46,6 @@
   ];
   # Preserve space by sacrificing documentation and history
   documentation.nixos.enable = false;
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
-  boot.cleanTmpDir = true;
 
   # Configure basic SSH access
   services.openssh.enable = true;
