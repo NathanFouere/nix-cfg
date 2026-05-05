@@ -93,6 +93,18 @@
         ];
       };
 
+
+      nixosConfigurations.raspberry-pi3-1= nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixpkgs; };
+        modules = [
+          ./hosts/raspberry-pi3-1/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
+          inputs.agenix.nixosModules.default
+          inputs.microvm.nixosModules.host
+          inputs.nix-sweep.nixosModules.default
+        ];
+      };
+
       # deploy-rs cf . https://paradigmatic.systems/posts/setting-up-deploy-rs/
       deploy = {
         nodes = {
