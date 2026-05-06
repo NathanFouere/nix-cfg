@@ -27,22 +27,20 @@
 
   # cf . https://citizen428.net/blog/installing-nixos-raspberry-pi-3/
 
-  # NixOS wants to enable GRUB by default
+  # Disable GRUB
   boot.loader.grub.enable = false;
+
+  # U-Boot reads extlinux.conf to boot the kernel
+  boot.loader.generic-extlinux-compatible.enable = true;
 
   # if you have a Raspberry Pi 2 or 3, pick this:
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # A bunch of boot parameters needed for optimal runtime on RPi 3b+
   boot.kernelParams = ["cma=256M"];
-  boot.loader.raspberryPi.enable = true;
-  boot.loader.raspberryPi.version = 3;
-  boot.loader.raspberryPi.uboot.enable = true;
-  boot.loader.raspberryPi.firmwareConfig = ''
-    gpu_mem=256
-  '';
   environment.systemPackages = with pkgs; [
-    raspberrypi-tools
+    ubootRaspberryPi3
+    libraspberrypi
   ];
   # Preserve space by sacrificing documentation and history
   documentation.nixos.enable = false;
