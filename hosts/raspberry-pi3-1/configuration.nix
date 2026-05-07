@@ -37,7 +37,7 @@
   # A bunch of boot parameters needed for optimal runtime on RPi 3b+
   boot.kernelParams = ["cma=256M"];
   environment.systemPackages = with pkgs; [
-    raspberrypi-tools
+
   ];
   # Preserve space by sacrificing documentation and history
   documentation.nixos.enable = false;
