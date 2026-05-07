@@ -95,13 +95,9 @@
 
 
       nixosConfigurations.raspberry-pi3-1= nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
         specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/raspberry-pi3-1/configuration.nix
-          inputs.home-manager.nixosModules.home-manager
-          inputs.agenix.nixosModules.default
-          inputs.nix-sweep.nixosModules.default
         ];
       };
 
