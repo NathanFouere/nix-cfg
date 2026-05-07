@@ -19,7 +19,6 @@
     mkcert
     unzip
     htop
-    lazygit
     util-linux
     lsof
   ];

@@ -7,15 +7,14 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/common/tailscale.nix
-    ../../modules/system/common/base.nix
-    ../../modules/system/common/agenix.nix
-    ../../modules/system/common/cleanup.nix
   ];
 
   networking.hostName = "raspberry-pi3-1";
 
   system.stateVersion = "25.11";
+
+  # cf . https://wiki.nixos.org/wiki/Swap
+  zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 
   users.users.admin = {
     isNormalUser = true;
