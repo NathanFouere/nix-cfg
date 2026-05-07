@@ -98,6 +98,8 @@
         specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/raspberry-pi3-1/configuration.nix
+          inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
         ];
       };
 
