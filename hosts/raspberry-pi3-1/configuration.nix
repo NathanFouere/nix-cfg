@@ -22,10 +22,12 @@
     memoryPercent = 50;
   };
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8192;  # 8 GiB
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8192; # 8 GiB
+    }
+  ];
 
   users.users.admin = {
     isNormalUser = true;
@@ -72,6 +74,14 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPjeepX6RNKZ7s6HOy3yGlSF+EUDztviuL+iTgFxZQOl nathanfouere@tutanota.com" # thinkcentre-1
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com" # thinkcentre-2
   ];
+
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "admin" = import ../../home/home-server.nix;
+    };
+  };
 
   age = {
     identityPaths = [ "/home/nixos/.ssh/id_ed25519" ];

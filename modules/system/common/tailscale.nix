@@ -16,7 +16,10 @@
     before = [ "tailscaled.service" ];
     wantedBy = [ "tailscaled.service" ];
 
-    path = with pkgs; [ curl jq ];
+    path = with pkgs; [
+      curl
+      jq
+    ];
 
     serviceConfig = {
       Type = "oneshot";

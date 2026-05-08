@@ -93,8 +93,7 @@
         ];
       };
 
-
-      nixosConfigurations.raspberry-pi3-1= nixpkgs.lib.nixosSystem {
+      nixosConfigurations.raspberry-pi3-1 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/raspberry-pi3-1/configuration.nix
