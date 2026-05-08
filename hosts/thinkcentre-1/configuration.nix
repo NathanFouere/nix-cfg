@@ -9,6 +9,7 @@
     ../../modules/system/common/tailscale.nix
     ../../modules/system/common/base.nix
     ../../modules/system/server/base-server.nix
+    ../../modules/system/server/nfs.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/server/vm/vm-k3s-server-n-client.nix

@@ -36,6 +36,7 @@
       };
       project_panel = {
         button = true;
+        dock = "right";
       };
       git_panel = {
         button = true;
