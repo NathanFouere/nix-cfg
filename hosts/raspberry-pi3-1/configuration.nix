@@ -74,6 +74,6 @@
   ];
 
   age = {
-    identityPaths = [ "/home/admin/.ssh/id_ed25519" ];
+    identityPaths = [ "/home/root/.ssh/id_ed25519" ];
   };
 }
