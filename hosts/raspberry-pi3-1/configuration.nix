@@ -52,10 +52,6 @@
   # Preserve space by sacrificing documentation and history
   documentation.nixos.enable = false;
 
-  # Configure basic SSH access
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";
-
   # cf . https://mynixos.com/nixpkgs/option/nix.settings.trusted-users
   nix.settings.trusted-users = [
     "root"
