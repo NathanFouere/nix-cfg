@@ -12,6 +12,7 @@
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/server/vm/vm-k3s-client.nix
+    ../../modules/system/server/nfs-client.nix
   ];
 
   networking.hostName = "thinkcentre-2";
