@@ -43,6 +43,8 @@
 
   # Disable GRUB
   boot.loader.grub.enable = false;
+  # Disable systemd-boot (enabled by base.nix, conflicts with extlinux)
+  boot.loader.systemd-boot.enable = false;
 
   boot.loader.generic-extlinux-compatible.enable = true;
 
