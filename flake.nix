@@ -94,6 +94,7 @@
       };
 
       nixosConfigurations.raspberry-pi3-1 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
         specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/raspberry-pi3-1/configuration.nix
@@ -120,14 +121,6 @@
               sshUser = "root";
               user = "root";
               path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.thinkcentre-2;
-            };
-          };
-          raspberry-pi3-1 = {
-            hostname = "raspberry-pi3-1";
-            profiles.system = {
-              sshUser = "root";
-              user = "root";
-              path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
             };
           };
         };
