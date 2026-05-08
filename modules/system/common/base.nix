@@ -32,8 +32,8 @@
 
     # cf . https://mynixos.com/nixpkgs/options/services.openssh
     services.openssh.enable = true;
-    services.openssh.PasswordAuthentication = false;
-    services.openssh.permitRootLogin = "prohibit-password";
+    services.openssh.settings.PasswordAuthentication = false;
+    services.openssh.settings.permitRootLogin = "prohibit-password";
 
     # Configure console keymap
     console.keyMap = "en";
