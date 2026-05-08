@@ -16,6 +16,10 @@
 
   networking.hostName = "thinkcentre-2";
 
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   # cf . https://microvm-nix.github.io/microvm.nix/simple-network.html
   systemd.network.networks."10-lan" = {
     matchConfig.Name = [

@@ -14,6 +14,10 @@
     ../../modules/system/server/vm/vm-k3s-server-n-client.nix
   ];
 
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.hostName = "thinkcentre-1";
 
   # cf . https://microvm-nix.github.io/microvm.nix/simple-network.html
