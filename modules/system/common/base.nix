@@ -11,6 +11,8 @@
       "flakes"
     ];
 
+    security.sudo.wheelNeedsPassword = false;
+
     # Set your time zone.
     time.timeZone = "Europe/Paris";
 
