@@ -123,6 +123,17 @@
               path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.thinkcentre-2;
             };
           };
+          ## TODO => fixer
+          # raspberry-pi3-1 = {
+          #   system = "aarch64-linux";
+          #   remoteBuild = true; # une meilleure solution serait de centraliser les builds sur une seul machine, là cest par simplicité
+          #   hostname = "raspberry-pi3-1";
+          #   profiles.system = {
+          #     sshUser = "root";
+          #     user = "root";
+          #     path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
+          #   };
+          # };
         };
       };
 
