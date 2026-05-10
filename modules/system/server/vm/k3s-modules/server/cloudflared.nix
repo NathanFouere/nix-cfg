@@ -17,6 +17,7 @@
             "rustfs-console-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "siyuan.nathan-fouere.com" = "http://localhost:30000";
             "baikal.nathan-fouere.com" = "http://localhost:30000";
+            "nathan-fouere.com" = "http://localhost:30000";
           };
         };
       };

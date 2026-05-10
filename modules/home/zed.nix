@@ -18,6 +18,7 @@
       "copilot"
       "base16"
       "mermaid"
+      "helm"
     ];
     userSettings = {
       hour_format = "hour24";
