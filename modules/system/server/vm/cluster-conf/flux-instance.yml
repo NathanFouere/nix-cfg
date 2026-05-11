@@ -14,6 +14,8 @@ spec:
     - kustomize-controller
     - helm-controller
     - notification-controller
+    - image-reflector-controller
+    - image-automation-controller
   cluster:
     type: kubernetes
     size: medium
@@ -25,3 +27,4 @@ spec:
     url: "https://github.com/NathanFouere/flux-conf"
     ref: "refs/heads/main"
     path: "./clusters/production"
+    pullSecret: "git-secrets"

@@ -22,4 +22,4 @@
 - [ ] Créer machine qui build les configs et utiliser cacher grâce à hydra (https://github.com/NixOS/hydra)
 - [x] Regener automatiquement la clé pour tailscale tous les mois
 - [ ] setup grafana pour monitorer les machines
-- [ ] voir pour "livraison continue" (flux, kub)
+- [x] voir pour "livraison continue" (flux, kub)
