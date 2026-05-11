@@ -9,6 +9,8 @@
           ingress = {
             "traefik.nathan-fouere.com" = "http://localhost:30000";
             "flux.nathan-fouere.com" = "http://localhost:30000";
+            "api-strategia.nathan-fouere.com" = "http://localhost:30000";
+            "strategia.nathan-fouere.com" = "http://localhost:30000";
             "api-president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "president-challenge.nathan-fouere.com" = "http://localhost:30000";
             "rustfs-president-challenge.nathan-fouere.com" = "http://localhost:30000";
