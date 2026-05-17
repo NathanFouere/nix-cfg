@@ -6,7 +6,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/common/tailscale.nix
     ../../modules/system/common/base.nix
     ../../modules/system/normal/base-perso.nix
     ../../modules/system/normal/stylix.nix
@@ -21,6 +20,7 @@
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/normal/prog.nix
+    ../../modules/system/common/ssh-client.nix
   ];
 
   networking.hostName = "tour";
@@ -48,6 +48,9 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com" # thinkcentre-2
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6+xOLTc6bWDHw9jq9TXA1Sbp29Q23n5J8dUA+A7iMQ nathanfouere@tutanota.com" # raspberry-pi3-1
   ];
+
+  # Allow building aarch64-linux (ARM)
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   home-manager = {
     # also pass inputs to home-manager modules

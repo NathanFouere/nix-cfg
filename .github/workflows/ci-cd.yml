@@ -28,9 +28,10 @@ jobs:
       - name: Flake check
         run: nix flake check
 
+  # desactiver pour le moment, builds trop long en github actions
   deployment:
     needs: checks
-    if: github.event_name == 'push' && github.ref_name == 'main' && needs.checks.result == 'success' # cf . https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
+    if: false # github.event_name == 'push' && github.ref_name == 'main' && needs.checks.result == 'success' # cf . https://www.w3tutorials.net/blog/conditional-needs-in-github-actions/
     runs-on: ubuntu-latest
     steps:
       - name: git checkout

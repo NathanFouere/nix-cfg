@@ -132,5 +132,13 @@
         };
       };
     };
+    userKeymaps = [
+      {
+        context = "Workspace";
+        bindings = {
+          "ctrl-shift-b" = "project_panel::ToggleFocus";
+        };
+      }
+    ];
   };
 }
