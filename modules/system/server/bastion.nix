@@ -52,12 +52,12 @@
     # Allow the Tailscale UDP port through the firewall
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
-  
-  systemd.services.tailscaled.serviceConfig.Environment = [ 
-    "TS_DEBUG_FIREWALL_MODE=nftables" 
+
+  systemd.services.tailscaled.serviceConfig.Environment = [
+    "TS_DEBUG_FIREWALL_MODE=nftables"
   ];
-  
-  systemd.network.wait-online.enable = false; 
+
+  systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
 
   networking.nftables.enable = true;

@@ -124,12 +124,12 @@
             };
           };
           raspberry-pi3-1 = {
-             hostname = "bastion";
-             profiles.system = {
-               sshUser = "root";
-               user = "root";
-               path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
-             };
+            hostname = "bastion";
+            profiles.system = {
+              sshUser = "root";
+              user = "root";
+              path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
+            };
           };
         };
       };
