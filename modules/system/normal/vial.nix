@@ -14,7 +14,7 @@
 
     # cf . https://www.reddit.com/r/olkb/comments/ydf353/qmk_on_nixos_cant_see_keyboard_ferris_sweep/
     services.udev.extraRules = ''
-      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess", TAG+="udev-acl", GROUP="nathanf"
+      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="feed", ATTRS{idProduct}=="0000", OWNER="1000", GROUP="100", MODE="0666"
     '';
   };
 }

@@ -19,6 +19,7 @@
     ../../modules/system/normal/streaming-torrent.nix
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
+    ../../modules/system/common/open-ssh.nix
   ];
 
   networking.hostName = "laptop";

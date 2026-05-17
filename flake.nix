@@ -110,7 +110,7 @@
           thinkcentre-1 = {
             hostname = "thinkcentre-1";
             profiles.system = {
-              sshUser = "root";
+              sshUser = "admin";
               user = "root";
               path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.thinkcentre-1;
             };
@@ -118,26 +118,20 @@
           thinkcentre-2 = {
             hostname = "thinkcentre-2";
             profiles.system = {
-              sshUser = "root";
+              sshUser = "admin";
               user = "root";
               path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.thinkcentre-2;
             };
           };
-          ## TODO => fixer
-          # raspberry-pi3-1 = {
-          #   system = "aarch64-linux";
-          #   remoteBuild = true; # une meilleure solution serait de centraliser les builds sur une seul machine, là cest par simplicité
-          #   hostname = "raspberry-pi3-1";
-          #   profiles.system = {
-          #     sshUser = "root";
-          #     user = "root";
-          #     path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
-          #   };
-          # };
+          raspberry-pi3-1 = {
+             hostname = "bastion";
+             profiles.system = {
+               sshUser = "root";
+               user = "root";
+               path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.raspberry-pi3-1;
+             };
+          };
         };
       };
-
-      ## TODO => pour le moment il fait aussi les checks sur laptopt et tour, à fixer
-      checks = builtins.mapAttrs (sys: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
