@@ -68,13 +68,15 @@
     chain input {
       type filter hook input priority 0;
 
-      # accept any localhost traffic
       # cf . https://wiki.nftables.org/wiki-nftables/index.php/Matching_packet_metainformation
-      iifname lo accept
+      iifname { "lo", "tailscale0" } accept comment "trusted interfaces"
 
       # accept traffic originated from us
       # cf . https://www.baeldung.com/linux/new-established-related
       ct state {established, related} accept
+
+      # pour tailscale
+      udp dport 41641 accept
       
       # ICMP
       icmp type echo-request accept
@@ -108,6 +110,9 @@
 
       # Allow outbound NTP
       udp dport 123 accept
+
+      # pour tailscale
+      udp dport 41641 accept
 
       # count and drop any other traffic
       counter drop
