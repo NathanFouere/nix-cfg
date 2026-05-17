@@ -41,6 +41,7 @@
       };
       git_panel = {
         button = true;
+        dock = "left";
       };
       collaboration_panel = {
         button = false;
@@ -137,6 +138,7 @@
         context = "Workspace";
         bindings = {
           "ctrl-shift-b" = "project_panel::ToggleFocus";
+          "ctrl-shift-v" = "terminal_panel::ToggleFocus";
         };
       }
     ];
