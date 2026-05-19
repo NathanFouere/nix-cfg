@@ -23,6 +23,7 @@
             "prowlarr.nathan-fouere.com" = "http://localhost:30000";
             "qbittorrent.nathan-fouere.com" = "http://localhost:30000";
             "nathan-fouere.com" = "http://localhost:30000";
+            "bazarr.nathan-fouere.com" = "http://localhost:30000";
           };
         };
       };
