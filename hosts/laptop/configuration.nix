@@ -16,7 +16,6 @@
     ../../modules/system/normal/vial.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
-    ../../modules/system/normal/streaming-torrent.nix
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/common/open-ssh.nix
