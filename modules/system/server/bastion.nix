@@ -69,7 +69,7 @@
       type filter hook input priority 0;
 
       # cf . https://wiki.nftables.org/wiki-nftables/index.php/Matching_packet_metainformation
-      iifname { "lo", "tailscale0" } accept comment "trusted interfaces"
+      iifname { "lo", "tailscale0*" } accept comment "trusted interfaces"
 
       # accept traffic originated from us
       # cf . https://www.baeldung.com/linux/new-established-related
@@ -99,6 +99,8 @@
 
       # Allow outbound SSH (bastion needs to connect to internal hosts)
       tcp dport 22 accept
+      
+      iifname { "tailscale0*" } accept comment "trusted interfaces"
 
       # Allow outbound DNS and HTTP/S for package updates
       udp dport 53 accept
