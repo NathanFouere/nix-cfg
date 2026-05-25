@@ -19,6 +19,7 @@
       "base16"
       "mermaid"
       "helm"
+      "opencode"
     ];
     userSettings = {
       hour_format = "hour24";
@@ -71,6 +72,12 @@
         };
       };
       base_keymap = "VSCode";
+      agent_servers = {
+        "OpenCode" = {
+          command = "opencode";
+          args = [ "acp" ];
+        };
+      };
       language_models = {
         openai_compatible = {
           "Z.ai" = {
