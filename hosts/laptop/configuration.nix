@@ -19,6 +19,7 @@
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/common/open-ssh.nix
+    ../../modules/system/common/ai.nix
   ];
 
   networking.hostName = "laptop";
