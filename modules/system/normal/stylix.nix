@@ -7,7 +7,7 @@
   stylix.enable = true;
   stylix.targets.qt.enable = false;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-light.yaml";
-  stylix.image = ../../../assets/wallpaper/background-2.jpg;
+  stylix.image = ../../../assets/wallpaper/background-2.png;
   stylix.polarity = "light";
   stylix.opacity = {
     desktop = 0.9;
