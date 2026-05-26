@@ -148,6 +148,12 @@
           "ctrl-shift-v" = "terminal_panel::ToggleFocus";
         };
       }
+      {
+        context = "ProjectPanel";
+        bindings = {
+          "enter" = "project_panel::Open";
+        };
+      }
     ];
   };
 }
