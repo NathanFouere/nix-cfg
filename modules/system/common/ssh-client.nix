@@ -30,6 +30,11 @@
           Hostname 192.168.1.220
           User admin
           ${lib.optionalString config.custom.ssh.useProxyJump "ProxyJump bastion"}
+          
+        Host tour
+          Hostname 192.168.1.16
+          User nathanf
+          ${lib.optionalString config.custom.ssh.useProxyJump "ProxyJump bastion"}
       ";
     };
   };

@@ -45,8 +45,6 @@
 
   users.users.nathanf.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/W4/ioRVmnittNFSscL1GdZF7qFy2RtaizNvcHjFZO nathanfouere@tutanota.com" # laptop
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGt1eMrTeYJ+cG9LkLotYKvRpeWwNEjq1HF+XjZUdQ1 nathanfouere@tutanota.com" # thinkcentre-1
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com" # thinkcentre-2
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6+xOLTc6bWDHw9jq9TXA1Sbp29Q23n5J8dUA+A7iMQ nathanfouere@tutanota.com" # raspberry-pi3-1
   ];
 
