@@ -21,6 +21,7 @@
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/normal/prog.nix
     ../../modules/system/common/ssh-client.nix
+    ../../modules/system/common/open-ssh.nix
   ];
 
   networking.hostName = "tour";
