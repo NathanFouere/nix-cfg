@@ -16,6 +16,8 @@
   ];
 
   networking.hostName = "raspberry-pi3-1";
+  custom.ssh.bastionIp = "192.168.1.23";
+  custom.ssh.useProxyJump = false;
 
   system.stateVersion = "25.11";
 

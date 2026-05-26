@@ -17,6 +17,7 @@
   ];
 
   networking.hostName = "thinkcentre-2";
+  custom.ssh.bastionIp = "192.168.1.23";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

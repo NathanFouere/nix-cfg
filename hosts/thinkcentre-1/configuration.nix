@@ -21,6 +21,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "thinkcentre-1";
+  custom.ssh.bastionIp = "192.168.1.23";
 
   # cf . https://microvm-nix.github.io/microvm.nix/simple-network.html
   systemd.network.networks."10-lan" = {

@@ -19,10 +19,12 @@
     ../../modules/system/normal/deploy.nix
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/common/open-ssh.nix
+    ../../modules/system/common/ssh-client.nix
     ../../modules/system/normal/ai.nix
   ];
 
   networking.hostName = "laptop";
+  custom.ssh.bastionIp = "100.90.231.15";
   system.stateVersion = "24.11";
 
   # Bootloader.
