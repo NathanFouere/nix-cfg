@@ -8,6 +8,7 @@
       kubectl
       kubeseal
       k9s
+      fluxcd
     ];
   };
 }
