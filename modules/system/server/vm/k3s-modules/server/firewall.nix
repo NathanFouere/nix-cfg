@@ -9,6 +9,8 @@
         6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
         443
         30000 # Traefik
+        10250 # port called for metrics by prometheus
+        9100 # port called for metrics by prometheus
       ];
       allowedUDPPorts = [
         8472 # k3s, flannel: required if using multi-node for inter-node networking
