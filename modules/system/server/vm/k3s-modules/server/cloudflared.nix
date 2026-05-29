@@ -25,7 +25,8 @@
             "nathan-fouere.com" = "http://localhost:30000";
             "bazarr.nathan-fouere.com" = "http://localhost:30000";
             "grafana.nathan-fouere.com" = "http://localhost:30000";
-            "prometheus.nathan-fouere.com" = "http://localhost:30000";
+            "prometheus-monitoring.nathan-fouere.com" = "http://localhost:30000";
+            "prometheus-alerts.nathan-fouere.com" = "http://localhost:30000";
           };
         };
       };
