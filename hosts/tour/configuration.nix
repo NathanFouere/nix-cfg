@@ -11,7 +11,7 @@
     ../../modules/system/normal/stylix.nix
     ../../modules/system/normal/zsh.nix
     ../../modules/system/normal/gnome.nix
-    ../../modules/system/normal/docker.nix
+    ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
     ../../modules/system/normal/nvidia.nix
     ../../modules/system/common/agenix.nix

@@ -12,7 +12,7 @@
     ../../modules/system/normal/stylix.nix
     ../../modules/system/normal/zsh.nix
     ../../modules/system/normal/gnome.nix
-    ../../modules/system/normal/docker.nix
+    ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
@@ -21,6 +21,7 @@
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/normal/ai.nix
+    ../../modules/system/normal/prog.nix
   ];
 
   networking.hostName = "laptop";
