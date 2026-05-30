@@ -8,7 +8,7 @@
 }:
 let
   # Import the k3s-vm helper function
-  k3sVM = import ./k3s-modules/k3s-vm.nix;
+  k3sVM = import ./k3s/k3s-vm.nix;
 
   # SSH key for these VMs (thinkcentre-1)
   sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPjeepX6RNKZ7s6HOy3yGlSF+EUDztviuL+iTgFxZQOl nathanfouere@tutanota.com";
@@ -38,7 +38,7 @@ in
         ip = "${subnet}.211";
         mac = "02:00:00:00:00:01";
         cid = 3;
-        role = "server";
+        isServer = true;
         inherit gateway;
         inherit dns;
         inherit serverAddr;
@@ -55,7 +55,7 @@ in
         ip = "${subnet}.212";
         mac = "02:00:00:00:00:02";
         cid = 4;
-        role = "agent";
+        isServer = false;
         inherit gateway;
         inherit dns;
         inherit serverAddr;

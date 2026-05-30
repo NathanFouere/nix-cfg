@@ -97,3 +97,4 @@ source ./scripts/fetch-k3s-kubeconfig.sh
 * https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/
 * https://cdmckay.org/stop-your-raspberry-pi-nixos-builds-from-crashing/
 * https://www.wirsingsecurity.com/tutorials/jump-servers-and-bastion-hosts-for-homelab-access/
+* https://computingforgeeks.com/install-prometheus-grafana-kubernetes/
