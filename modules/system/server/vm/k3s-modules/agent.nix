@@ -8,6 +8,8 @@
       allowedTCPPorts = [
         22 # SSH
         30000 # Traefik
+        10250 # port called for metrics by prometheus
+        9100 # port called for metrics by prometheus
       ];
       allowedUDPPorts = [
         8472 # k3s, flannel: required if using multi-node for inter-node networking
