@@ -3,10 +3,13 @@
   config,
   ...
 }:
+
+let
+  k3sMasterNodeAddr = "192.168.1.211";
+in
 {
+  # ici dans les faits, la plupart de la config nest pas utile car tout passe par un tunnel cloudflared
   # cf . https://www.wirsingsecurity.com/tutorials/jump-servers-and-bastion-hosts-for-homelab-access/
-  environment.systemPackages = with pkgs; [
-  ];
 
   # cf . https://wiki.nixos.org/wiki/Fail2ban
   services.fail2ban = {
@@ -119,8 +122,52 @@
       # pour tailscale
       udp sport 41641 accept
 
+      # pour k3s
+      ip daddr ${k3sMasterNodeAddr} tcp dport 6443 accept comment "k3s API"
+      ip daddr ${k3sMasterNodeAddr} tcp dport 30000 accept comment "k3s traeffik"
+
+      # pour cloudflared
+      udp dport 7844 accept
+
       # count and drop any other traffic
       counter drop
     }
   '';
+
+  ## Cloudflared
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "ba6598c7-7b06-4fc2-a206-a90df5d418ac" = {
+        credentialsFile = "/run/agenix/cloudflared-tunnel-cred";
+        default = "http_status:404";
+        ingress =
+          let
+            k3sBackend = "http://${k3sMasterNodeAddr}:30000";
+          in
+          {
+            "traefik.nathan-fouere.com" = k3sBackend;
+            "flux.nathan-fouere.com" = k3sBackend;
+            "api-strategia.nathan-fouere.com" = k3sBackend;
+            "strategia.nathan-fouere.com" = k3sBackend;
+            "api-president-challenge.nathan-fouere.com" = k3sBackend;
+            "president-challenge.nathan-fouere.com" = k3sBackend;
+            "rustfs-president-challenge.nathan-fouere.com" = k3sBackend;
+            "rustfs-console-president-challenge.nathan-fouere.com" = k3sBackend;
+            "siyuan.nathan-fouere.com" = k3sBackend;
+            "baikal.nathan-fouere.com" = w;
+            "jellyfin.nathan-fouere.com" = k3sBackend;
+            "radarr.nathan-fouere.com" = k3sBackend;
+            "sonarr.nathan-fouere.com" = k3sBackend;
+            "prowlarr.nathan-fouere.com" = k3sBackend;
+            "qbittorrent.nathan-fouere.com" = k3sBackend;
+            "nathan-fouere.com" = k3sBackend;
+            "bazarr.nathan-fouere.com" = k3sBackend;
+            "grafana.nathan-fouere.com" = k3sBackend;
+            "prometheus-monitoring.nathan-fouere.com" = k3sBackend;
+            "prometheus-alerts.nathan-fouere.com" = k3sBackend;
+          };
+      };
+    };
+  };
 }
