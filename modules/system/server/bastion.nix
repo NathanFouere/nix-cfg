@@ -155,7 +155,7 @@ in
             "rustfs-president-challenge.nathan-fouere.com" = k3sBackend;
             "rustfs-console-president-challenge.nathan-fouere.com" = k3sBackend;
             "siyuan.nathan-fouere.com" = k3sBackend;
-            "baikal.nathan-fouere.com" = w;
+            "baikal.nathan-fouere.com" = k3sBackend;
             "jellyfin.nathan-fouere.com" = k3sBackend;
             "radarr.nathan-fouere.com" = k3sBackend;
             "sonarr.nathan-fouere.com" = k3sBackend;
