@@ -46,7 +46,6 @@
       obsidian
       vscode
       discord
-      wasistlos
       telegram-desktop
       vesktop
       gimp
