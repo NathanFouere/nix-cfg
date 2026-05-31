@@ -19,9 +19,14 @@
   restartIfChanged = true;
 
   config = {
+    imports = [
+      ../../../common/cleanup.nix
+      inputs.nix-sweep.nixosModules.default
+    ];
+    
     microvm.hypervisor = "cloud-hypervisor";
-    microvm.vcpu = 1;
-    microvm.mem = 3 * 1024;
+    microvm.vcpu = 2;
+    microvm.mem = 6 * 1024;
 
     microvm.shares = [
       {
