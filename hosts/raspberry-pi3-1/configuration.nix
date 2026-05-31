@@ -13,12 +13,14 @@
     ../../modules/system/common/cleanup.nix
     ../../modules/system/server/bastion.nix
     ../../modules/system/common/ssh-client.nix
+    ../../modules/system/server/monitoring.nix
   ];
 
   networking.hostName = "raspberry-pi3-1";
   custom.ssh.bastionIp = "192.168.1.23";
   custom.ssh.useProxyJump = false;
   custom.k3s.masterNodeAddr = "192.168.1.211";
+  custom.monitoring.targets = [ "192.168.1.23:9000" ];
 
   system.stateVersion = "25.11";
 

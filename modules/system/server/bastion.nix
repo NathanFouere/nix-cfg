@@ -50,20 +50,13 @@
     security.duosec.allowTcpForwarding = true;
 
     # cf https://wiki.nixos.org/wiki/Tailscale
-    networking.firewall = {
-      enable = true;
-      trustedInterfaces = [ "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
-    };
+    networking.firewall.enable = false;
 
     systemd.services.tailscaled.serviceConfig.Environment = [
       "TS_DEBUG_FIREWALL_MODE=nftables"
     ];
 
-    systemd.network.wait-online.enable = false;
-    boot.initrd.systemd.network.wait-online.enable = false;
-
-    networking.nftables.enable = true;
+    networking.nftables.enable = false;
 
     # cf . https://mynixos.com/nixpkgs/option/networking.nftables.tables
     networking.nftables.tables.filters.family = "inet";
@@ -85,6 +78,15 @@
 
         # Allow inbound SSH
         tcp dport 22 accept
+
+        # For Prometheus
+        # cf . https://documentation.ubuntu.com/security/security-features/network/firewall/nftables/
+        ip saddr . tcp dport {
+               192.168.1.211 . 9090,
+               192.168.2.212 . 9090,
+               192.168.2.221 . 9090,
+               192.168.2.222 . 9090
+        } accept
 
         # count and drop any other traffic
         counter drop
