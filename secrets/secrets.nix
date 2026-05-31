@@ -19,31 +19,14 @@ in
     tour
   ]
   ++ systems;
-  "cloudflared-tunnel-cred.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
-  "cloudflare-origin-cert.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
-  "cloudflare-origin-key.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
+  "cloudflared-tunnel-cred.age".publicKeys = systems;
+  "cloudflare-origin-key.age".publicKeys = systems;
   "traefik-dashboard-pswd.age".publicKeys = [
     laptop
     tour
   ]
   ++ systems;
-  "nodes-pswd.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
+  "nodes-pswd.age".publicKeys = systems;
   "tailscale-oauth-id.age".publicKeys = [
     laptop
     tour
@@ -54,9 +37,5 @@ in
     tour
   ]
   ++ systems;
-  "cloudflare-origin-cert-2.age".publicKeys = [
-    laptop
-    tour
-  ]
-  ++ systems;
+  "cloudflare-origin-cert-2.age".publicKeys = systems;
 }
