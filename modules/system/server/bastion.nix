@@ -113,8 +113,11 @@
       # Allow outbound NTP
       udp dport 123 accept
 
+      # ICMP
+      icmp type echo-request accept
+
       # pour tailscale
-      udp dport 41641 accept
+      udp sport 41641 accept
 
       # count and drop any other traffic
       counter drop

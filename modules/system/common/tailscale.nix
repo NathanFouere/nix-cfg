@@ -70,8 +70,10 @@
       fi
 
       # Write auth key to file
+      echo "Writing auth key to file"
       printf '%s' "$AUTH_KEY" > /var/lib/tailscale/dynamic-authkey
       chmod 600 /var/lib/tailscale/dynamic-authkey
+      echo "Auth key written to file"
     '';
   };
 

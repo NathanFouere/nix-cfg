@@ -54,4 +54,9 @@ in
     tour
   ]
   ++ systems;
+  "cloudflare-origin-cert-2.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }

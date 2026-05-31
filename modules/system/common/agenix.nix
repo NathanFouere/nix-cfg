@@ -16,5 +16,6 @@
     secrets.nodes-pswd.file = ../../../secrets/nodes-pswd.age;
     secrets.tailscale-oauth-id.file = ../../../secrets/tailscale-oauth-id.age;
     secrets.tailscale-oauth-key.file = ../../../secrets/tailscale-oauth-key.age;
+    secrets.cloudflare-origin-cert-2.file = ../../../secrets/cloudflare-origin-cert-2.age;
   };
 }
