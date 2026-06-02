@@ -16,5 +16,6 @@
     secrets.tailscale-oauth-id.file = ../../../secrets/tailscale-oauth-id.age;
     secrets.tailscale-oauth-key.file = ../../../secrets/tailscale-oauth-key.age;
     secrets.cloudflare-origin-cert-2.file = ../../../secrets/cloudflare-origin-cert-2.age;
+    secrets.cloudflare-dns-api-token.file = ../../../secrets/cloudflare-dns-api-token.age;
   };
 }

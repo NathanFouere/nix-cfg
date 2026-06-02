@@ -107,6 +107,7 @@
       allowedTCPPorts = [
         22 # SSH
         30000 # Traefik NodePort
+        30001 # Traefik NodePort https
         10250 # port called for metrics by prometheus
         9100 # port called for metrics by prometheus
       ]
@@ -245,6 +246,15 @@
                 metrics:
                   prometheus:
                     enabled: true
+
+                certificatesResolvers:
+                  letsencrypt:
+                    acme:
+                      email: "nathanfouere@tutanota.com"
+                      storage: /etc/traefik/acme.json
+                      caServer: "https://acme-v02.api.letsencrypt.org/directory"
+                      httpChallenge:
+                        entryPoint: web
           '';
         }
       else
@@ -272,7 +282,6 @@
           kubernetes-helm
           fluxcd
           kubectl
-          k9s
           kubeseal
           fluxcd-operator
         ])
@@ -305,7 +314,6 @@
     // (
       if isServer then
         {
-          # Services Kubernetes (server uniquement)
           # cf . https://fluxoperator.dev/docs/guides/install/
           flux-operator-install = {
             description = "Install flux-operator via Helm";
@@ -352,7 +360,7 @@
             };
           };
 
-          create-cloudflare-origin-secret = {
+          create-dns-key-secret = {
             description = "Create Cloudflare Origin TLS Secret for Traefik";
             after = [ "k3s.service" ];
             wants = [ "k3s.service" ];

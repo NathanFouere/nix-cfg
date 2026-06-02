@@ -143,7 +143,7 @@
           default = "http_status:404";
           ingress =
             let
-              k3sBackend = "http://${config.custom.k3s.masterNodeAddr}:30000";
+              k3sBackend = "https://${config.custom.k3s.masterNodeAddr}:30001";
             in
             {
               "traefik.nathan-fouere.com" = k3sBackend;
