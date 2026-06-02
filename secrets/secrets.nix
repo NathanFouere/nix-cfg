@@ -38,4 +38,9 @@ in
   ]
   ++ systems;
   "cloudflare-origin-cert-2.age".publicKeys = systems;
+  "dns-api-key.age".publicKeys = [
+    laptop
+    tour
+  ]
+  ++ systems;
 }
