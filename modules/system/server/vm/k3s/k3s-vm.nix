@@ -228,10 +228,6 @@
                       namespacePolicy:
                         from: All
                       mode: Terminate
-                      certificateRefs:
-                        - kind: Secret
-                          name: cloudflare-origin-tls
-                          group: ""
 
                 # Enable Observability
                 logs:
@@ -309,8 +305,8 @@
           # cf . https://fluxoperator.dev/docs/guides/install/
           flux-operator-install = {
             description = "Install flux-operator via Helm";
-            after = [ "create-cloudflare-origin-secret.service" ];
-            wants = [ "create-cloudflare-origin-secret.service" ];
+            after = [ "k3s.service" ];
+            wants = [ "k3s.service" ];
             wantedBy = [ "multi-user.target" ];
             environment = {
               KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
@@ -349,48 +345,6 @@
               User = "root";
               Restart = "on-failure";
               RestartSec = "30s";
-            };
-          };
-
-          create-cloudflare-origin-secret = {
-            description = "Create Cloudflare Origin TLS Secret for Traefik";
-            after = [ "k3s.service" ];
-            wants = [ "k3s.service" ];
-            wantedBy = [ "multi-user.target" ];
-            environment = {
-              KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
-            };
-            script = ''
-              # Wait for k3s to be ready
-              echo "Waiting for k3s to be ready..."
-              while ! ${pkgs.kubectl}/bin/kubectl get nodes >/dev/null 2>&1; do
-                  sleep 2
-              done
-
-              CERT_PATH="/run/agenix/cloudflare-origin-cert-2"
-              KEY_PATH="/run/agenix/cloudflare-origin-key"
-              DASHBOARD_PSWD_PATH="/run/agenix/traefik-dashboard-pswd"
-
-              # Cree le secret TLS dans le namespace kube-system (ou tourne Traefik)
-              ${pkgs.kubectl}/bin/kubectl create secret tls cloudflare-origin-tls \
-                --cert="$CERT_PATH" \
-                --key="$KEY_PATH" \
-                --namespace=kube-system \
-                --dry-run=client -o yaml | ${pkgs.kubectl}/bin/kubectl apply -f -
-
-              # Cree le secret BasicAuth pour le dashboard Traefik
-              ${pkgs.kubectl}/bin/kubectl create secret generic dashboard-auth-secret \
-                --from-literal=username=admin \
-                --from-literal=password=$(cat "$DASHBOARD_PSWD_PATH") \
-                --type=kubernetes.io/basic-auth \
-                --namespace=kube-system \
-                --dry-run=client -o yaml | ${pkgs.kubectl}/bin/kubectl apply -f -
-            '';
-
-            serviceConfig = {
-              Type = "oneshot";
-              RemainAfterExit = true;
-              User = "root";
             };
           };
         }
