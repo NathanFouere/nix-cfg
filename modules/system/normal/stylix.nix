@@ -6,7 +6,7 @@
   fonts.packages = with pkgs; [ _0xproto ];
   stylix.enable = true;
   stylix.targets.qt.enable = false;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-light.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-dark.yaml";
   stylix.image = ../../../assets/wallpaper/background-3.jpg;
   stylix.polarity = "light";
   stylix.opacity = {
