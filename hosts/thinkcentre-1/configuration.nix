@@ -8,7 +8,6 @@
     ./hardware-configuration.nix
     ../../modules/system/common/base.nix
     ../../modules/system/server/base-server.nix
-    ../../modules/system/server/nfs-server.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/common/open-ssh.nix
@@ -102,4 +101,9 @@
   age = {
     identityPaths = [ "/home/admin/.ssh/id_ed25519" ];
   };
+
+  ## ZFS
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot = false;
+  networking.hostId = "9e9ea674";
 }
