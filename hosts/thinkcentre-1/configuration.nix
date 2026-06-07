@@ -13,6 +13,8 @@
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/server/vm/vm-k3s-server-n-client.nix
+    ../../modules/system/server/zfs.nix
+    ../../modules/system/server/nfs-server.nix
   ];
 
   # Bootloader.
@@ -102,8 +104,6 @@
     identityPaths = [ "/home/admin/.ssh/id_ed25519" ];
   };
 
-  ## ZFS
-  boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = false;
-  networking.hostId = "9e9ea674";
+  custom.zfs.poolName = "nas";
+  custom.zfs.hostId = "9e9ea674";
 }

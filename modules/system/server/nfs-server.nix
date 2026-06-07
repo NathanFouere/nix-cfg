@@ -6,10 +6,10 @@
   config = {
     # cf .https://nixos.wiki/wiki/NFS
 
-    # ici on monte le disk branché en usb
     fileSystems."/export/nfs-share" = {
-      device = "/dev/disk/by-uuid/7d9065f9-8654-4876-a20e-723f3ccd5155";
-      fsType = "ext4";
+      device = "/mnt/nas/services";
+      fsType = "none";
+      options = [ "bind" ];
     };
 
     services.nfs.server.enable = true;
