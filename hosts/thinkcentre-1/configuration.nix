@@ -106,4 +106,15 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
   networking.hostId = "9e9ea674";
+
+  # cf . https://www.return12.net/zfs-on-nixos/
+  # commande
+  # zpool create -f -o ashift=12 -m /mnt/nas nas \
+  #    raidz \
+  #    ata-ST1000DX001-1NS162_Z4YB6B6R \
+  #    ata-ST1000LM035-1RK172_WQ97Y955 \
+  #    ata-WDC_WD10EZEX-08WN4A0_WD-WCC6Y0LNLV2R
+  # zfs create nas/services
+
+    
 }
