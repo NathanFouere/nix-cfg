@@ -13,6 +13,8 @@
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/server/vm/vm-k3s-server-n-client.nix
+    ../../modules/system/server/zfs.nix
+    ../../modules/system/server/nfs-server.nix
   ];
 
   # Bootloader.
@@ -102,19 +104,6 @@
     identityPaths = [ "/home/admin/.ssh/id_ed25519" ];
   };
 
-  ## ZFS
-  boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = false;
-  networking.hostId = "9e9ea674";
-
-  # cf . https://www.return12.net/zfs-on-nixos/
-  # commande
-  # zpool create -f -o ashift=12 -m /mnt/nas nas \
-  #    raidz \
-  #    ata-ST1000DX001-1NS162_Z4YB6B6R \
-  #    ata-ST1000LM035-1RK172_WQ97Y955 \
-  #    ata-WDC_WD10EZEX-08WN4A0_WD-WCC6Y0LNLV2R
-  # zfs create nas/services
-
-    
+  custom.zfs.poolName = "nas";
+  custom.zfs.hostId = "9e9ea674";
 }
