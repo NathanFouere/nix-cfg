@@ -42,6 +42,9 @@
       "dialout"
     ];
   };
+  
+  # Allow building aarch64-linux (ARM)
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   users.users.nathanf.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLqKehCp63zveXLYnz+r/3E/orptsNliJfccxejvnlp nathanfouere@tutanota.com" # tour

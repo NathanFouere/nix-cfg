@@ -126,8 +126,9 @@
         ip daddr ${config.custom.k3s.masterNodeAddr} tcp dport 6443 accept comment "k3s API"
         ip daddr ${config.custom.k3s.masterNodeAddr} tcp dport 30000 accept comment "k3s traeffik"
 
-        # pour cloudflared (QUIC)
+        # pour cloudflared (QUIC, http2)
         udp dport 7844 accept
+        tcp dport 7844 accept
 
         # count and drop any other traffic
         counter drop
