@@ -12,6 +12,7 @@
       tlaps
       texliveFull
       jetbrains.datagrip
+      iperf3
     ];
   };
 }
