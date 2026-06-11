@@ -268,7 +268,6 @@
           kubernetes-helm
           fluxcd
           kubectl
-          k9s
           kubeseal
           fluxcd-operator
         ])
