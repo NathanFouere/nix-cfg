@@ -24,8 +24,8 @@
     userSettings = {
       hour_format = "hour24";
       vim_mode = false;
-      show_edit_predictions = true;
-      show_completions_on_input = true;
+      show_edit_predictions = false;
+      show_completions_on_input = false;
       scrollbar = {
         show = "always";
       };
@@ -146,6 +146,7 @@
         bindings = {
           "ctrl-shift-b" = "project_panel::ToggleFocus";
           "ctrl-shift-v" = "terminal_panel::ToggleFocus";
+          "ctrl-shift-x" = "workspace::NewTerminal";
         };
       }
       {
