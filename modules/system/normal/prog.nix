@@ -13,6 +13,7 @@
       texliveFull
       jetbrains.datagrip
       iperf3
+      go
     ];
   };
 }
