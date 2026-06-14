@@ -14,6 +14,7 @@
   imports = [
     ../modules/home/zed.nix
     ../modules/home/ghostty.nix
+    ../modules/home/ai.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

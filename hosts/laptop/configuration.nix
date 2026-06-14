@@ -20,7 +20,6 @@
     ../../modules/system/normal/k8s-management.nix
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix
-    ../../modules/system/normal/ai.nix
     ../../modules/system/normal/prog.nix
   ];
 
