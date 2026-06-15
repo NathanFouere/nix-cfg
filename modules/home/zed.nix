@@ -14,6 +14,7 @@
       "php"
       "html"
       "js"
+      "go"
       "catppuccin-icons"
       "copilot"
       "base16"
@@ -25,7 +26,7 @@
       hour_format = "hour24";
       vim_mode = false;
       show_edit_predictions = false;
-      show_completions_on_input = false;
+      show_completions_on_input = true;
       scrollbar = {
         show = "always";
       };
@@ -153,6 +154,12 @@
         context = "ProjectPanel";
         bindings = {
           "enter" = "project_panel::Open";
+        };
+      }
+      {
+        context = "Editor";
+        bindings = {
+          "2" = "editor::GoToDefinition";
         };
       }
     ];

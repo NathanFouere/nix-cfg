@@ -14,6 +14,7 @@
       jetbrains.datagrip
       iperf3
       go
+      gcc
     ];
   };
 }
