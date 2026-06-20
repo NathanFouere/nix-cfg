@@ -51,7 +51,6 @@
       gimp
       chromium
       postman
-      steam
       libreoffice
       vlc
       element-desktop
