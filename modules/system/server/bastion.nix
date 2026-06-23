@@ -56,7 +56,7 @@
       "TS_DEBUG_FIREWALL_MODE=nftables"
     ];
 
-    networking.nftables.enable = false;
+    networking.nftables.enable = true;
 
     # cf . https://mynixos.com/nixpkgs/option/networking.nftables.tables
     networking.nftables.tables.filters.family = "inet";
@@ -103,7 +103,7 @@
         # Allow outbound SSH (bastion needs to connect to internal hosts)
         tcp dport 22 accept
 
-        iifname { "tailscale0*" } accept comment "trusted interfaces"
+        oifname { "tailscale0*" } accept comment "trusted interfaces"
 
         # Allow outbound DNS and HTTP/S for package updates
         udp dport 53 accept
