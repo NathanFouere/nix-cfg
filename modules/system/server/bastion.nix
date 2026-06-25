@@ -49,6 +49,7 @@
 
     security.duosec.allowTcpForwarding = true;
 
+    networking.useDHCP = false;
     systemd.network.networks."10-lan" = {
       matchConfig.Name = "en*";
       networkConfig = {
