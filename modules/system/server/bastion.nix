@@ -49,15 +49,15 @@
 
     security.duosec.allowTcpForwarding = true;
 
-    systemd.network = {
-      enable = true;
-      networks."10-lan" = {
-        matchConfig.Name = "en*";
-        address = [ "192.168.1.23/24" ];
-        gateway = [ "192.168.1.1" ];
-        dns = [ "192.168.1.1" ];
-        networkConfig.IPv6AcceptRA = true;
+    systemd.network.networks."10-lan" = {
+      matchConfig.Name = "en*";
+      networkConfig = {
+        Address = [ "192.168.1.23/24" ];
+        Gateway = "192.168.1.1";
+        DNS = [ "192.168.1.1" ];
+        IPv6AcceptRA = true;
       };
+      linkConfig.RequiredForOnline = "routable";
     };
 
     # cf https://wiki.nixos.org/wiki/Tailscale
