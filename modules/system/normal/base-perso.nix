@@ -57,6 +57,7 @@
       obs-studio
       pciutils
       rpi-imager
+      steam
     ];
   };
 }
