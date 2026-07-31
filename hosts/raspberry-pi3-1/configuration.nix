@@ -10,6 +10,7 @@
     ../../modules/system/common/tailscale.nix
     ../../modules/system/common/base.nix
     ../../modules/system/common/agenix.nix
+    ../../modules/system/server/agenix.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/server/bastion.nix
     ../../modules/system/common/ssh-client.nix
