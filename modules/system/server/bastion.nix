@@ -97,7 +97,7 @@
         # cf . https://documentation.ubuntu.com/security/security-features/network/firewall/nftables/
         ip saddr . tcp dport {
                192.168.1.211 . 9090,
-               192.168.2.212 . 9090,
+               192.168.1.212 . 9090,
                192.168.2.221 . 9090,
                192.168.2.222 . 9090
         } accept
