@@ -58,6 +58,7 @@
       pciutils
       rpi-imager
       steam
+      proton-vpn
     ];
   };
 }
