@@ -43,7 +43,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      obsidian
+      siyuan
       vscode
       discord
       telegram-desktop
