@@ -21,6 +21,7 @@
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/normal/prog.nix
+    ../../modules/system/normal/niri.nix
   ];
 
   networking.hostName = "laptop";
