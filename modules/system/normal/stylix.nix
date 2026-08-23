@@ -11,7 +11,7 @@
   ];
   stylix.enable = true;
   stylix.targets.qt.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-light.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/embers-light.yaml";
   stylix.image = ../../../assets/wallpaper/background-2.png;
   stylix.polarity = "light";
   stylix.cursor = {
