@@ -11,6 +11,7 @@
     ../../modules/system/normal/base-perso.nix
     ../../modules/system/normal/stylix.nix
     ../../modules/system/normal/zsh.nix
+    ../../modules/system/normal/niri.nix
     ../../modules/system/normal/gnome.nix
     ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
@@ -41,7 +42,7 @@
       "dialout"
     ];
   };
-  
+
   # Allow building aarch64-linux (ARM)
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 

@@ -30,6 +30,16 @@
     };
     disko = {
       url = "github:nix-community/disko/latest";
+    };
+    niri = {
+      # Community flake wrapping niri (https://github.com/niri-wm/niri)
+      # with NixOS / home-manager modules
+      url = "github:epireyn/niri-flake";
+    };
+    noctalia = {
+      # Desktop shell for Wayland (https://noctalia.dev)
+      # Not yet in our pinned nixpkgs
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -52,6 +62,7 @@
           ./hosts/tour/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
           inputs.agenix.nixosModules.default
           inputs.nix-sweep.nixosModules.default
           inputs.microvm.nixosModules.host
