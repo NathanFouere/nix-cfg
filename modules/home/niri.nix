@@ -16,8 +16,8 @@
       # https://github.com/niri-wm/niri/blob/v26.04/resources/default-config.kdl
       # Noctalia IPC binds from: https://docs.noctalia.dev/noctalia/compositor-settings/niri/
       default-binds = {
-        # Mod-Shift-/, usually the same as Mod-?, shows a list of important hotkeys
-        "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
+        # Mod+² shows a list of important hotkeys
+        "Mod+²".action.show-hotkey-overlay = [ ];
 
         "Mod+T".hotkey-overlay.title = "Open a Terminal: ghostty";
         "Mod+T".action.spawn = "ghostty";
