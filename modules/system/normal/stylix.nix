@@ -12,7 +12,7 @@
   stylix.enable = true;
   stylix.targets.qt.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-light.yaml";
-  stylix.image = ../../../assets/wallpaper/light.png;
+  stylix.image = ../../../assets/wallpaper/background-2.png;
   stylix.polarity = "light";
   stylix.cursor = {
     package = pkgs.bibata-cursors;

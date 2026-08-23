@@ -136,6 +136,32 @@
                   prompt_cache_key = true;
                 };
               }
+              {
+                name = "glm-5.2";
+                display_name = "GLM-5.2";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
+              {
+                name = "glm-5.3";
+                display_name = "GLM-5.3";
+                max_tokens = 200000;
+                max_output_tokens = 128000;
+                max_completion_tokens = 128000;
+                capabilities = {
+                  tools = true;
+                  images = false;
+                  parallel_tool_calls = true;
+                  prompt_cache_key = true;
+                };
+              }
             ];
           };
         };
