@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     xwayland-satellite
     playerctl
+    nautilus
   ];
 
   programs.niri.settings =
@@ -21,6 +22,8 @@
 
         "Mod+T".hotkey-overlay.title = "Open a Terminal: ghostty";
         "Mod+T".action.spawn = "ghostty";
+        "Mod+E".hotkey-overlay.title = "Open Files: nautilus";
+        "Mod+E".action.spawn = "nautilus";
         "Mod+D".hotkey-overlay.title = "Run an Application: noctalia launcher";
         "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
         "Mod+Space".action.spawn-sh = "noctalia msg panel-toggle launcher";
