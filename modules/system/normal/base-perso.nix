@@ -59,6 +59,7 @@
       rpi-imager
       steam
       proton-vpn
+      flameshot
     ];
   };
 }
