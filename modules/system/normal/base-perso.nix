@@ -60,6 +60,7 @@
       steam
       proton-vpn
       flameshot
+      signal-desktop
     ];
   };
 }
