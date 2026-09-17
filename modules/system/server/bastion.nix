@@ -183,6 +183,7 @@
               "prometheus-alerts.nathan-fouere.com" = k3sBackend;
               "cleanuparr.nathan-fouere.com" = k3sBackend;
               "manon.nathan-fouere.com" = k3sBackend;
+              "paseo.nathan-fouere.com" = k3sBackend;
             };
         };
       };
