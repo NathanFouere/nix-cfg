@@ -28,6 +28,8 @@
   custom.ssh.bastionIp = "100.90.231.15";
   system.stateVersion = "24.11";
 
+  services.upower.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

@@ -20,6 +20,11 @@
         radius = 0;
       };
 
+      widget.battery = {
+        show_label = true;
+        label_content = "percent";
+      };
+
       wallpaper = {
         enabled = true;
         default.path = "${config.stylix.image}";
