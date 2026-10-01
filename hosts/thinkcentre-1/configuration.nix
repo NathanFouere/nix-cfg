@@ -10,6 +10,7 @@
     ../../modules/system/server/base-server.nix
     ../../modules/system/common/agenix.nix
     ../../modules/system/server/agenix.nix
+    ../../modules/system/common/github-cli.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/common/ssh-client.nix

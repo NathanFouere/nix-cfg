@@ -38,4 +38,10 @@ in
   ]
   ++ systems;
   "cloudflare-origin-cert-2.age".publicKeys = systems;
+  "github-token.age".publicKeys = [
+    laptop
+    tour
+    thinkcentre-1
+    thinkcentre-2
+  ];
 }

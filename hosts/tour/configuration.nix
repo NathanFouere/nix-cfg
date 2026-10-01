@@ -16,6 +16,7 @@
     ../../modules/system/normal/vial.nix
     ../../modules/system/normal/nvidia.nix
     ../../modules/system/common/agenix.nix
+    ../../modules/system/common/github-cli.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/normal/ai-host.nix
     ../../modules/system/normal/deploy.nix
