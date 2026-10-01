@@ -16,7 +16,7 @@
 }:
 {
   pkgs = import nixpkgs { system = "x86_64-linux"; };
-  restartIfChanged = true;
+  restartIfChanged = false;
 
   config = {
     imports = [
