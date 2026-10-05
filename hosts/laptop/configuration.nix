@@ -45,7 +45,7 @@
       "dialout"
     ];
   };
-  
+
   # Allow building aarch64-linux (ARM)
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
