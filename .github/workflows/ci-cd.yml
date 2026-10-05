@@ -49,7 +49,7 @@ jobs:
           tags: tag:cd
 
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
+        uses: webfactory/ssh-agent@v0.10.0
         with:
           ssh-private-key: ${{ secrets.KEY }}
 
