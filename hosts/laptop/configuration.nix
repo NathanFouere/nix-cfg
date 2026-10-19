@@ -23,6 +23,7 @@
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/normal/prog.nix
     ../../modules/system/normal/niri.nix
+    ../../modules/system/normal/vpn.nix
   ];
 
   networking.hostName = "laptop";
