@@ -184,6 +184,7 @@
               "cleanuparr.nathan-fouere.com" = k3sBackend;
               "manon.nathan-fouere.com" = k3sBackend;
               "hermes.nathan-fouere.com" = k3sBackend;
+              "anki.nathan-fouere.com" = k3sBackend;
             };
         };
       };
