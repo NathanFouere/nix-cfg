@@ -9,6 +9,13 @@
     settings = {
       font-size = 12;
 
+      window-padding-x = 14;
+      window-padding-y = 10;
+      window-padding-balance = true;
+      window-decoration = false;
+      cursor-style = "bar";
+      cursor-style-blink = true;
+
       confirm-close-surface = false;
 
       shell-integration = "zsh";

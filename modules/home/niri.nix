@@ -206,11 +206,84 @@
 
         "Mod+Shift+P".action.power-off-monitors = [ ];
       };
+      colors = config.lib.stylix.colors.withHashtag;
     in
     {
       input.keyboard.xkb = {
         layout = "fr";
         variant = "azerty";
+      };
+
+      # Let niri draw decorations instead of client-side title bars
+      prefer-no-csd = true;
+      hotkey-overlay.skip-at-startup = true;
+
+      layout = {
+        gaps = 14;
+        struts = {
+          left = 4;
+          right = 4;
+        };
+        center-focused-column = "on-overflow";
+        always-center-single-column = true;
+
+        preset-column-widths = [
+          { proportion = 1.0 / 3.0; }
+          { proportion = 1.0 / 2.0; }
+          { proportion = 2.0 / 3.0; }
+        ];
+        default-column-width.proportion = 1.0 / 2.0;
+
+        # Gradient ring around the focused window, replaces stylix's flat border
+        border.enable = false;
+        focus-ring = {
+          enable = true;
+          width = 3;
+          active.gradient = {
+            from = colors.base0D;
+            to = colors.base0E;
+            angle = 45;
+            relative-to = "workspace-view";
+          };
+          inactive.color = colors.base02;
+          urgent.color = colors.base08;
+        };
+
+        shadow = {
+          enable = true;
+          softness = 30;
+          spread = 4;
+          offset = {
+            x = 0;
+            y = 6;
+          };
+          color = "#00000090";
+          inactive-color = "#00000050";
+        };
+
+        tab-indicator = {
+          hide-when-single-tab = true;
+          place-within-column = true;
+          width = 4;
+          corner-radius = 4;
+          gap = 6;
+          active.color = colors.base0D;
+          inactive.color = colors.base03;
+        };
+
+        insert-hint.display.color = "${colors.base0D}80";
+      };
+
+      overview = {
+        zoom = 0.5;
+        backdrop-color = colors.base00;
+        workspace-shadow.enable = true;
+      };
+
+      animations.window-open.kind.spring = {
+        damping-ratio = 0.8;
+        stiffness = 800;
+        epsilon = 0.0001;
       };
 
       # Electron/Wayland: vscode, discord, element...
@@ -231,12 +304,17 @@
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 20.0;
-            top-right = 20.0;
-            bottom-left = 20.0;
-            bottom-right = 20.0;
+            top-left = 14.0;
+            top-right = 14.0;
+            bottom-left = 14.0;
+            bottom-right = 14.0;
           };
           clip-to-geometry = true;
+          draw-border-with-background = false;
+        }
+        {
+          matches = [ { is-active = false; } ];
+          opacity = 0.93;
         }
         {
           matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
