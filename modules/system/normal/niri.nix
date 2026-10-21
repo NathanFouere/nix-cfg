@@ -15,6 +15,9 @@
     niri-flake.cache.enable = false;
 
     services = {
+      # Trash, network shares and removable drives in nautilus (enabled by GNOME, not by niri)
+      gvfs.enable = true;
+
       displayManager = {
         gdm = {
           enable = true;
