@@ -26,6 +26,12 @@
           ];
         };
       };
+
+      # Charge automatiquement le devShell d'un projet contenant un .envrc (`use flake`)
+      direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
     };
 
     users.defaultUserShell = pkgs.zsh;
