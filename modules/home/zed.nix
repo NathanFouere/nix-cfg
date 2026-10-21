@@ -1,17 +1,7 @@
 {
-  config,
-  lib,
   ...
 }:
 
-let
-  colors = config.lib.stylix.colors.withHashtag;
-  # Same opacity as the terminal, as a hex alpha suffix (0.72 -> "B7")
-  alpha = lib.fixedWidthString 2 "0" (
-    lib.toHexString (builtins.floor (config.stylix.opacity.terminal * 255))
-  );
-  translucent = color: "${color}${alpha}";
-in
 {
   # cf . https://nohup.no/zed-editor/
   programs.zed-editor = {
@@ -34,21 +24,6 @@ in
     ];
     userSettings = {
       hour_format = "hour24";
-      # stylix only themes colors: make the backgrounds see-through (popups stay opaque)
-      theme_overrides."Base16 ${config.lib.stylix.colors.scheme-name}" = {
-        "background.appearance" = "transparent";
-        "background" = translucent colors.base00;
-        "editor.background" = translucent colors.base00;
-        "editor.gutter.background" = translucent colors.base00;
-        "toolbar.background" = translucent colors.base00;
-        "terminal.background" = translucent colors.base00;
-        "tab.active_background" = translucent colors.base00;
-        "panel.background" = translucent colors.base01;
-        "tab_bar.background" = translucent colors.base01;
-        "tab.inactive_background" = translucent colors.base01;
-        "title_bar.background" = translucent colors.base01;
-        "status_bar.background" = translucent colors.base01;
-      };
       vim_mode = false;
       show_edit_predictions = false;
       show_completions_on_input = true;
@@ -205,12 +180,6 @@ in
         context = "ProjectPanel";
         bindings = {
           "enter" = "project_panel::Open";
-        };
-      }
-      {
-        context = "Editor";
-        bindings = {
-          "2" = "editor::GoToDefinition";
         };
       }
     ];

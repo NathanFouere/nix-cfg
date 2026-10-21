@@ -11,6 +11,10 @@
     nautilus
   ];
 
+  # No minimize/maximize/close buttons in GTK/libadwaita header bars: windows are closed with Mod+Q
+  # Read by GTK3/GTK4/libadwaita on Wayland (directly or through the xdg settings portal)
+  dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":";
+
   programs.niri.settings =
     let
       # Base keybinds adapted from niri's default config (pinned v26.04):
@@ -188,6 +192,9 @@
 
         # Floating / tiling
         "Mod+V".action.toggle-window-floating = [ ];
+
+        # Opaque/translucent switch for the focused window (videos, images...)
+        "Mod+Shift+O".action.toggle-window-rule-opacity = [ ];
         "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
 
         # Tabbed column display mode
@@ -312,10 +319,7 @@
           clip-to-geometry = true;
           draw-border-with-background = false;
         }
-        {
-          matches = [ { is-active = false; } ];
-          opacity = 0.93;
-        }
+        { opacity = config.stylix.opacity.applications; }
         {
           matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
           open-floating = true;

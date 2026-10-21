@@ -27,8 +27,9 @@
   };
   stylix.opacity = {
     desktop = 0.9;
-    applications = 0.85;
-    terminal = 0.72;
+    applications = 0.93;
+    # Window transparency is applied uniformly by niri (applications opacity)
+    terminal = 1.0;
     popups = 1.0;
   };
   stylix.fonts = {
