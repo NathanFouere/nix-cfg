@@ -24,6 +24,7 @@
     ../../modules/system/normal/prog.nix
     ../../modules/system/normal/niri.nix
     ../../modules/system/normal/vpn.nix
+    ../../modules/system/normal/calendar.nix
   ];
 
   networking.hostName = "laptop";

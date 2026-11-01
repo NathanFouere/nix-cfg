@@ -13,6 +13,7 @@
     ../../modules/system/normal/bluetooth.nix
     ../../modules/system/normal/niri.nix
     ../../modules/system/normal/vpn.nix
+    ../../modules/system/normal/calendar.nix
     ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
     ../../modules/system/normal/nvidia.nix

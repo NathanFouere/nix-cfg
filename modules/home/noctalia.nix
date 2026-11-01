@@ -60,6 +60,8 @@
 
       lockscreen.blurred_desktop = true;
 
+      calendar.enabled = true;
+
       notification.border_color = "primary";
       osd = {
         position = "bottom_center";

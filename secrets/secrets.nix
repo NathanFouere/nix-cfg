@@ -20,7 +20,6 @@ in
   ]
   ++ systems;
   "cloudflared-tunnel-cred.age".publicKeys = systems;
-  "cloudflare-origin-key.age".publicKeys = systems;
   "traefik-dashboard-pswd.age".publicKeys = [
     laptop
     tour
@@ -37,8 +36,15 @@ in
     tour
   ]
   ++ systems;
-  "cloudflare-origin-cert-2.age".publicKeys = systems;
   "proton-vpn.age".publicKeys = [
+    laptop
+    tour
+  ];
+  "baikal-password.age".publicKeys = [
+    laptop
+    tour
+  ];
+  "noctalia-calendar-account.age".publicKeys = [
     laptop
     tour
   ];
