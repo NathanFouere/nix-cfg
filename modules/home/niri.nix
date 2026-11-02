@@ -200,7 +200,9 @@
         # Tabbed column display mode
         "Mod+W".action.toggle-column-tabbed-display = [ ];
 
-        "Print".action.screenshot = [ ];
+        # Screenshot: select a region with slurp, then annotate with satty (see screenshot.nix)
+        "Print".hotkey-overlay.title = "Screenshot + Annotation: slurp | satty";
+        "Print".action.spawn-sh = ''grim -g "$(slurp)" -t ppm - | satty --filename -'';
         "Ctrl+Print".action.screenshot-screen = [ ];
         "Alt+Print".action.screenshot-window = [ ];
 

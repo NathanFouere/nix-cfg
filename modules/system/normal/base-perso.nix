@@ -50,7 +50,6 @@
       libreoffice
       vlc
       pciutils
-      flameshot
     ];
   };
 }
