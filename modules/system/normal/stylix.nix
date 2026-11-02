@@ -18,7 +18,7 @@
     base01 = "171410";
     base02 = "2c2620";
   };
-  stylix.image = ../../../assets/wallpaper/promethee_4k.jpg;
+  stylix.image = ../../../assets/wallpaper/background-3.jpg;
   stylix.polarity = "dark";
   stylix.cursor = {
     package = pkgs.bibata-cursors;
