@@ -45,22 +45,12 @@
     environment.systemPackages = with pkgs; [
       siyuan
       vscode
-      discord
-      telegram-desktop
-      vesktop
       gimp
       chromium
-      postman
       libreoffice
       vlc
-      element-desktop
-      obs-studio
       pciutils
-      rpi-imager
-      steam
-      proton-vpn
       flameshot
-      signal-desktop
     ];
   };
 }

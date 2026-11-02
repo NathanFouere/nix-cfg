@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ../../modules/system/common/base.nix
     ../../modules/system/normal/base-perso.nix
+    ../../modules/system/normal/apps-perso.nix
     ../../modules/system/normal/stylix.nix
     ../../modules/system/normal/zsh.nix
     ../../modules/system/normal/bluetooth.nix
