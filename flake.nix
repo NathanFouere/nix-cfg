@@ -77,7 +77,19 @@
         ];
       };
 
-      nixosConfigurations.thinkcentre-1 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.laptop-travail = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixpkgs; };
+        modules = [
+          ./hosts/laptop-travail/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
+          inputs.agenix.nixosModules.default
+          inputs.nix-sweep.nixosModules.default
+        ];
+      };
+
+      nixosConfigurations.thinkcentre-1 =nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs nixpkgs; };
         modules = [
           ./hosts/thinkcentre-1/configuration.nix
