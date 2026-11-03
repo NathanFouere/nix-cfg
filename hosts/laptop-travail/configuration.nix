@@ -13,11 +13,13 @@
     ../../modules/system/normal/bluetooth.nix
     ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
-    ../../modules/system/common/github-cli.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/common/open-ssh.nix
     ../../modules/system/normal/prog.nix
     ../../modules/system/normal/niri.nix
+    ../../modules/system/normal/calendar.nix
+    ../../modules/system/normal/calendar-zimbra.nix
+    ../../modules/system/normal/openconnect.nix
   ];
 
   networking.hostName = "laptop-travail";

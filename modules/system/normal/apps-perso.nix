@@ -8,8 +8,6 @@
       discord
       vesktop
       steam
-      telegram-desktop
-      element-desktop
       signal-desktop
       postman
       obs-studio

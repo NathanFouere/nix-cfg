@@ -15,7 +15,7 @@
     ../../modules/system/normal/bluetooth.nix
     ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
-    ../../modules/system/common/agenix.nix
+    ../../modules/system/common/shared-secrets.nix
     ../../modules/system/common/github-cli.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/normal/deploy.nix
@@ -24,7 +24,7 @@
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/normal/prog.nix
     ../../modules/system/normal/niri.nix
-    ../../modules/system/normal/vpn.nix
+    ../../modules/system/normal/proton-vpn.nix
     ../../modules/system/normal/calendar.nix
   ];
 

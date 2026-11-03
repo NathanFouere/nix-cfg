@@ -50,6 +50,8 @@
       libreoffice
       vlc
       pciutils
+      telegram-desktop
+      element-desktop
     ];
   };
 }

@@ -13,12 +13,12 @@
     ../../modules/system/normal/zsh.nix
     ../../modules/system/normal/bluetooth.nix
     ../../modules/system/normal/niri.nix
-    ../../modules/system/normal/vpn.nix
+    ../../modules/system/normal/proton-vpn.nix
     ../../modules/system/normal/calendar.nix
     ../../modules/system/normal/virtualisation.nix
     ../../modules/system/normal/vial.nix
     ../../modules/system/normal/nvidia.nix
-    ../../modules/system/common/agenix.nix
+    ../../modules/system/common/shared-secrets.nix
     ../../modules/system/common/github-cli.nix
     ../../modules/system/common/cleanup.nix
     ../../modules/system/normal/deploy.nix

@@ -1,6 +1,7 @@
 let
   laptop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/W4/ioRVmnittNFSscL1GdZF7qFy2RtaizNvcHjFZO nathanfouere@tutanota.com";
   tour = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLqKehCp63zveXLYnz+r/3E/orptsNliJfccxejvnlp nathanfouere@tutanota.com";
+  laptop-travail = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHVwraAfuJU5Yxp0Ngd2Jc99s6f8kd9Ri84NOmZ9bGd6";
 
   thinkcentre-1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPjeepX6RNKZ7s6HOy3yGlSF+EUDztviuL+iTgFxZQOl nathanfouere@tutanota.com";
   thinkcentre-2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVoTuoNCuqpEVk8q9aRP3XAKrcRjuKOddlW6Te3hokC nathanfouere@tutanota.com";
@@ -43,10 +44,23 @@ in
   "baikal-password.age".publicKeys = [
     laptop
     tour
+    laptop-travail
   ];
   "noctalia-calendar-account.age".publicKeys = [
     laptop
     tour
+    laptop-travail
+  ];
+  # Déployés uniquement sur laptop-travail, laptop/tour en destinataires pour pouvoir les éditer
+  "zimbra-password.age".publicKeys = [
+    laptop
+    tour
+    laptop-travail
+  ];
+  "noctalia-zimbra-account.age".publicKeys = [
+    laptop
+    tour
+    laptop-travail
   ];
   "github-token.age".publicKeys = [
     laptop
