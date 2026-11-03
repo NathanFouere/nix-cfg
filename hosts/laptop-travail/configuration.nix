@@ -20,6 +20,7 @@
     ../../modules/system/normal/calendar.nix
     ../../modules/system/normal/calendar-zimbra.nix
     ../../modules/system/normal/openconnect.nix
+    ../../modules/system/common/github-cli.nix
   ];
 
   networking.hostName = "laptop-travail";
