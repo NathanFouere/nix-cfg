@@ -201,10 +201,11 @@
         "Mod+W".action.toggle-column-tabbed-display = [ ];
 
         # Screenshot: select a region with slurp, then annotate with satty (see screenshot.nix)
-        "Print".hotkey-overlay.title = "Screenshot + Annotation: slurp | satty";
-        "Print".action.spawn-sh = ''grim -g "$(slurp)" -t ppm - | satty --filename -'';
-        "Ctrl+Print".action.screenshot-screen = [ ];
-        "Alt+Print".action.screenshot-window = [ ];
+        # (no Print key on this keyboard → Mod+à family; "agrave" is the AZERTY à/0 key)
+        "Mod+agrave".hotkey-overlay.title = "Screenshot + Annotation: slurp | satty";
+        "Mod+agrave".action.spawn-sh = ''grim -g "$(slurp)" -t ppm - | satty --filename -'';
+        "Mod+Ctrl+agrave".action.screenshot-screen = [ ];
+        "Mod+Alt+agrave".action.screenshot-window = [ ];
 
         # Escape hatch against buggy keyboard shortcut inhibitors
         "Mod+Escape".allow-inhibiting = false;
