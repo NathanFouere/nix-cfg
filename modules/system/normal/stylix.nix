@@ -12,22 +12,17 @@
   ];
   stylix.enable = true;
   stylix.targets.qt.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/embers.yaml";
-  stylix.override = {
-    base00 = "0b0907";
-    base01 = "171410";
-    base02 = "2c2620";
-  };
-  stylix.image = ../../../assets/wallpaper/background-3.jpg;
-  stylix.polarity = "dark";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/embers-light.yaml";
+  stylix.image = ../../../assets/wallpaper/background-2.png;
+  stylix.polarity = "light";
   stylix.cursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 22;
   };
   stylix.opacity = {
-    desktop = 0.9;
-    applications = 0.93;
+    desktop = 0.94;
+    applications = 0.95;
     # Window transparency is applied uniformly by niri (applications opacity)
     terminal = 1.0;
     popups = 1.0;
