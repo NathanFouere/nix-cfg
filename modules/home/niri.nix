@@ -9,6 +9,8 @@
     xwayland-satellite
     playerctl
     nautilus
+    wdisplays
+    wl-mirror
   ];
 
   # No minimize/maximize/close buttons in GTK/libadwaita header bars: windows are closed with Mod+Q
