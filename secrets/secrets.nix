@@ -68,5 +68,6 @@ in
     tour
     thinkcentre-1
     thinkcentre-2
+    laptop-travail
   ];
 }
