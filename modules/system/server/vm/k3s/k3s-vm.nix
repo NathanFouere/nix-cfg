@@ -95,6 +95,13 @@
       settings = {
         PasswordAuthentication = false;
       };
+      # stocke la clé sur le volume persistant, sinon elle change à chaque redémarrage de la vm
+      hostKeys = [
+        {
+          path = "/var/lib/rancher/k3s/ssh/ssh_host_ed25519_key";
+          type = "ed25519";
+        }
+      ];
     };
 
     # cf . https://nixos.wiki/wiki/NFS
