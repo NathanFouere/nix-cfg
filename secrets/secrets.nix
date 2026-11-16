@@ -53,7 +53,6 @@ in
     tour
     laptop-travail
   ];
-  # Déployés uniquement sur laptop-travail, laptop/tour en destinataires pour pouvoir les éditer
   "zimbra-password.age".publicKeys = [
     laptop
     tour
