@@ -21,9 +21,15 @@
     ../../modules/system/normal/calendar-zimbra.nix
     ../../modules/system/normal/openconnect.nix
     ../../modules/system/common/github-cli.nix
+    ../../modules/system/common/ssh-client.nix
+    ../../modules/system/common/tailscale.nix
   ];
 
   networking.hostName = "laptop-travail";
+  custom.ssh.bastionIp = "100.90.231.15";
+
+  age.secrets.tailscale-oauth-id.file = ../../secrets/tailscale-oauth-id.age;
+  age.secrets.tailscale-oauth-key.file = ../../secrets/tailscale-oauth-key.age;
   system.stateVersion = "26.11";
 
   services.upower.enable = true;

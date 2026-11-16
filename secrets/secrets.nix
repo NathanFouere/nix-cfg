@@ -30,11 +30,13 @@ in
   "tailscale-oauth-id.age".publicKeys = [
     laptop
     tour
+    laptop-travail
   ]
   ++ systems;
   "tailscale-oauth-key.age".publicKeys = [
     laptop
     tour
+    laptop-travail
   ]
   ++ systems;
   "proton-vpn.age".publicKeys = [

@@ -324,7 +324,6 @@
           clip-to-geometry = true;
           draw-border-with-background = false;
         }
-        { opacity = config.stylix.opacity.applications; }
         {
           matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
           open-floating = true;

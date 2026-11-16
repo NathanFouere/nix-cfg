@@ -20,13 +20,6 @@
     name = "Bibata-Modern-Classic";
     size = 22;
   };
-  stylix.opacity = {
-    desktop = 0.94;
-    applications = 0.95;
-    # Window transparency is applied uniformly by niri (applications opacity)
-    terminal = 1.0;
-    popups = 1.0;
-  };
   stylix.fonts = {
     serif = {
       package = pkgs._0xproto;

@@ -81,6 +81,7 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/W4/ioRVmnittNFSscL1GdZF7qFy2RtaizNvcHjFZO nathanfouere@tutanota.com" # laptop
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLqKehCp63zveXLYnz+r/3E/orptsNliJfccxejvnlp nathanfouere@tutanota.com" # tour
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6+xOLTc6bWDHw9jq9TXA1Sbp29Q23n5J8dUA+A7iMQ nathanfouere@tutanota.com" # raspberry-pi3-1
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHVwraAfuJU5Yxp0Ngd2Jc99s6f8kd9Ri84NOmZ9bGd6" # laptop-travail
   ];
 
   services.openssh.settings.AllowUsers = [

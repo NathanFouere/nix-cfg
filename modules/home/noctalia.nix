@@ -32,10 +32,8 @@
         margin_ends = 14;
         margin_edge = 8;
         radius = 14;
-        background_opacity = 0.85;
         compositor_blur = true;
         capsule = true;
-        capsule_opacity = 0.6;
       };
 
       widget.battery = {
