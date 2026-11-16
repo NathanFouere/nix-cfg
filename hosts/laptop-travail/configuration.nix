@@ -23,6 +23,7 @@
     ../../modules/system/common/github-cli.nix
     ../../modules/system/common/ssh-client.nix
     ../../modules/system/common/tailscale.nix
+    ../../modules/system/normal/k8s-management.nix
   ];
 
   networking.hostName = "laptop-travail";
