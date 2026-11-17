@@ -18,6 +18,7 @@
     ../modules/home/noctalia.nix
     ../modules/home/screenshot.nix
     ../modules/home/ai.nix
+    ../modules/home/siyuan-backup.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
