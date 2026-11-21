@@ -1,10 +1,62 @@
 {
+  config,
   pkgs,
+  inputs,
   ...
 }:
 {
+  imports = [ inputs.agenix.homeManagerModules.default ];
+
   config = {
-    programs.opencode.enable = true;
+    # ${XDG_RUNTIME_DIR} non développé par opencode/Claude Code
+    age.secretsDir = "${config.home.homeDirectory}/.local/share/agenix";
+    age.secrets = {
+      opencode-github-token.file = ../../secrets/github-token.age;
+      zotero-api-key.file = ../../secrets/zotero-api-key.age;
+      zotero-library-id.file = ../../secrets/zotero-library-id.age;
+    };
+
+    programs.mcp = {
+      enable = true;
+      servers = {
+        zotero = {
+          command = "${pkgs.uv}/bin/uvx";
+          args = [
+            "--from"
+            "zotero-mcp-server@0.17.3"
+            "zotero-mcp"
+          ];
+          env = {
+            ZOTERO_LOCAL = "false";
+            ZOTERO_LIBRARY_TYPE = "user";
+            ZOTERO_API_KEY.file = config.age.secrets.zotero-api-key.path;
+            ZOTERO_LIBRARY_ID.file = config.age.secrets.zotero-library-id.path;
+          };
+        };
+
+        github = {
+          command = "${pkgs.github-mcp-server}/bin/github-mcp-server";
+          args = [ "stdio" ];
+          env.GITHUB_PERSONAL_ACCESS_TOKEN.file = config.age.secrets.opencode-github-token.path;
+        };
+
+        nixos.command = "${pkgs.mcp-nixos}/bin/mcp-nixos";
+
+        context7.command = "${pkgs.context7-mcp}/bin/context7-mcp";
+      };
+    };
+
+    programs.opencode = {
+      enable = true;
+      enableMcpIntegration = true;
+    };
+
+    programs.claude-code = {
+      enable = true;
+      enableMcpIntegration = true;
+      # Claude Code modifie lui-même settings.json
+      mutableSettings = true;
+    };
 
     programs.opencode.agents = {
       studying = ''

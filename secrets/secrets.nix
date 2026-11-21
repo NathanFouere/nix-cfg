@@ -63,6 +63,16 @@ in
     tour
     laptop-travail
   ];
+  "zotero-api-key.age".publicKeys = [
+    laptop
+    tour
+    laptop-travail
+  ];
+  "zotero-library-id.age".publicKeys = [
+    laptop
+    tour
+    laptop-travail
+  ];
   "github-token.age".publicKeys = [
     laptop
     tour
