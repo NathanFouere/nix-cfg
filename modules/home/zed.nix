@@ -30,6 +30,13 @@
       scrollbar = {
         show = "always";
       };
+      gutter = {
+        line_numbers = true;
+        runnables = false;
+        breakpoints = false;
+        folds = false;
+        min_line_number_digits = 1;
+      };
       indent_guides = {
         enabled = true;
         coloring = "indent_aware";
@@ -57,8 +64,8 @@
         selections_menu = false;
       };
       centered_layout = {
-        left_padding = 0.10;
-        right_padding = 0.10;
+        left_padding = 0.05;
+        right_padding = 0.05;
       };
       format_on_save = "off";
       assistant = {
