@@ -1,4 +1,6 @@
 {
+  lib,
+  pkgs,
   ...
 }:
 
@@ -6,6 +8,11 @@
   # cf . https://nohup.no/zed-editor/
   programs.zed-editor = {
     enable = true;
+    # Serveurs de langage que les extensions ne téléchargent pas elles-mêmes
+    extraPackages = with pkgs; [
+      nil
+      nixd
+    ];
     extensions = [
       "nix"
       "toml"
@@ -24,6 +31,12 @@
     ];
     userSettings = {
       hour_format = "hour24";
+      buffer_font_size = lib.mkForce 13;
+      ui_font_size = lib.mkForce 14;
+      agent_ui_font_size = 14;
+      terminal = {
+        font_size = 13;
+      };
       vim_mode = false;
       show_edit_predictions = false;
       show_completions_on_input = true;
