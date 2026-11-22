@@ -33,7 +33,8 @@
       hour_format = "hour24";
       buffer_font_size = lib.mkForce 13;
       ui_font_size = lib.mkForce 14;
-      agent_ui_font_size = 14;
+      agent_ui_font_size = 12;
+      agent_buffer_font_size = 12;
       terminal = {
         font_size = 13;
       };
