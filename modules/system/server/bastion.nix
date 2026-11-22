@@ -178,6 +178,7 @@
               "qbittorrent.nathan-fouere.com" = k3sBackend;
               "nathan-fouere.com" = k3sBackend;
               "bazarr.nathan-fouere.com" = k3sBackend;
+              "audiobookshelf.nathan-fouere.com" = k3sBackend;
               "grafana.nathan-fouere.com" = k3sBackend;
               "prometheus-monitoring.nathan-fouere.com" = k3sBackend;
               "prometheus-alerts.nathan-fouere.com" = k3sBackend;
