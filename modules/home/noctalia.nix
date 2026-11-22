@@ -28,9 +28,9 @@
 
       # Floating, rounded bar detached from the screen edges
       bar.default = {
-        thickness = 36;
-        margin_ends = 14;
-        margin_edge = 8;
+        thickness = 28;
+        margin_ends = 8;
+        margin_edge = 4;
         radius = 14;
         compositor_blur = true;
         capsule = true;

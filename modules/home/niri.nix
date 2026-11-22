@@ -231,10 +231,10 @@
       hotkey-overlay.skip-at-startup = true;
 
       layout = {
-        gaps = 14;
+        gaps = 8;
         struts = {
-          left = 4;
-          right = 4;
+          left = 3;
+          right = 3;
         };
         center-focused-column = "on-overflow";
         always-center-single-column = true;
