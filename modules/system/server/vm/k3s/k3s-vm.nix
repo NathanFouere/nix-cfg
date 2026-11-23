@@ -140,9 +140,15 @@
       enable = true;
       role = if isServer then "server" else "agent";
       tokenFile = "/run/agenix/k3s-token";
-      extraFlags = toString [
-        "--debug"
-      ];
+      extraFlags = toString (
+        [
+          "--debug"
+        ]
+        # cf. https://docs.k3s.io/datastore/ha
+        ++ (if isServer then [
+          "--node-taint=CriticalAddonsOnly=true:NoExecute"
+        ] else [ ])
+      );
     }
     // (
       if isServer then
