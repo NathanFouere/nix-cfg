@@ -82,6 +82,10 @@
         right_padding = 0.05;
       };
       format_on_save = "off";
+      # Fichiers Promela (.pml) colorés avec la grammaire C
+      file_types = {
+        "C" = [ "pml" ];
+      };
       assistant = {
         enabled = true;
       };
