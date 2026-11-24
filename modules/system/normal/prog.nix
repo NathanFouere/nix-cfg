@@ -16,11 +16,11 @@
       tlafmt
       tlaps
       texliveFull
-      jetbrains.datagrip
       iperf3
       go
       gcc
       zotero
+      graphviz
     ];
   };
 }
