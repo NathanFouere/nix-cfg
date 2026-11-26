@@ -34,6 +34,9 @@
         radius = 14;
         compositor_blur = true;
         capsule = true;
+        auto_hide = true;
+        show_on_workspace_switch = false;
+        reserve_space = false;
       };
 
       widget.battery = {

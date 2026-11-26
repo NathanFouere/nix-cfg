@@ -231,7 +231,7 @@
       hotkey-overlay.skip-at-startup = true;
 
       layout = {
-        gaps = 8;
+        gaps = 6;
         struts = {
           left = 3;
           right = 3;
@@ -316,10 +316,10 @@
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 14.0;
-            top-right = 14.0;
-            bottom-left = 14.0;
-            bottom-right = 14.0;
+            top-left = 8.0;
+            top-right = 8.0;
+            bottom-left = 8.0;
+            bottom-right = 8.0;
           };
           clip-to-geometry = true;
           draw-border-with-background = false;
