@@ -21,6 +21,7 @@
       gcc
       zotero
       graphviz
+      drawio
     ];
   };
 }
