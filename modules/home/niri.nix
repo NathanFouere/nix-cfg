@@ -17,6 +17,35 @@
   # Read by GTK3/GTK4/libadwaita on Wayland (directly or through the xdg settings portal)
   dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":";
 
+  # kanshi: applies the matching profile whenever the set of plugged monitors changes.
+  # New setup: arrange it live with wdisplays, read positions with `niri msg outputs`, add a profile.
+  # Positions are logical coordinates (laptop panel at scale 1.25 = 1536x864).
+  services.kanshi = {
+    enable = true;
+    settings = [
+      {
+        profile.name = "laptop";
+        profile.outputs = [
+          { criteria = "eDP-1"; }
+        ];
+      }
+      {
+        # LG ultrawide on top, laptop panel centered below it ((3440 - 1536) / 2 = 952)
+        profile.name = "lg-above";
+        profile.outputs = [
+          {
+            criteria = "LG Electronics LG HDR WQHD 0x0001AB35";
+            position = "0,0";
+          }
+          {
+            criteria = "eDP-1";
+            position = "952,1440";
+          }
+        ];
+      }
+    ];
+  };
+
   programs.niri.settings =
     let
       # Base keybinds adapted from niri's default config (pinned v26.04):

@@ -24,7 +24,6 @@
       "go"
       "catppuccin-icons"
       "copilot"
-      "base16"
       "mermaid"
       "helm"
       "opencode"
